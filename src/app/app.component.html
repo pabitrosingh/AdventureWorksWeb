@@ -1,7 +1,12 @@
-
 <app-header></app-header>
 <div class="container">
-<router-outlet></router-outlet>
+  <div class="row">
+    <div class="col col-lg-2">
+      <app-leftside></app-leftside>
+    </div>
+    <div class="col col-lg-10">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
 </div>
 <app-footer></app-footer>
-
