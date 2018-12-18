@@ -6,7 +6,8 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
-import { LeftsideComponent } from './leftside/leftside.component';
+import { LeftsideComponent } from './shared/leftside/leftside.component';
+import { HomeComponent } from './home/home.component';
 
 
 
@@ -15,7 +16,8 @@ import { LeftsideComponent } from './leftside/leftside.component';
     AppComponent,
     HeaderComponent,
     FooterComponent,
-    LeftsideComponent
+    LeftsideComponent,
+    HomeComponent
   ],
   imports: [
     BrowserModule,
