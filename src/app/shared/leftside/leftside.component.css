@@ -1,3 +1,9 @@
-.active{
+.list-group-item.active{
+  background-color: #17a2b8;
+  border-color: #17a2b8;
   border-right: solid 3px red;
+}
+.menu-img{
+  width: 15px;
+  height: 15px;
 }
