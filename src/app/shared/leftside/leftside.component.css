@@ -1,9 +1,3 @@
-.lef-sidebar li:hover{
-  background-color:#0156b7;
-  color: white;
+.active{
+  border-right: solid 3px red;
 }
-
-/* .lef-sidebar .active{
-  background-color:#0156b7;
-  color: white;
-  } */
