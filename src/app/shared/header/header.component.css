@@ -1,3 +1,22 @@
- .nav-link {
-   color: white;
+ .nav-item{
+  cursor: pointer;
+  padding-right: 15px;
+  padding-left: 15px;
+  /* border: solid 3px red; */
  }
+
+ .nav-item img{
+  height: 30px;
+ }
+ /* .header-menu {
+  height:25px;
+  padding-right: 30px;
+  background: #17a2b8;
+  border: none;
+  cursor: pointer;
+}
+*/
+
+/* .nav-item:hover {
+  background-color:#0f6674;
+} */

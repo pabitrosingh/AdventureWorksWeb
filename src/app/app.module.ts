@@ -7,8 +7,12 @@ import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
 import { FooterComponent } from './shared/footer/footer.component';
 import { LeftsideComponent } from './shared/leftside/leftside.component';
-import { HomeComponent } from './home/home.component';
 import { DashboardComponent } from './dashboard/dashboard.component';
+import { ProfileComponent } from './profile/profile.component';
+import { ProductionComponent } from './production/production.component';
+import { SalesComponent } from './sales/sales.component';
+import { PurchaseComponent } from './purchase/purchase.component';
+import { HrComponent } from './hr/hr.component';
 
 
 
@@ -18,8 +22,12 @@ import { DashboardComponent } from './dashboard/dashboard.component';
     HeaderComponent,
     FooterComponent,
     LeftsideComponent,
-    HomeComponent,
-    DashboardComponent
+      DashboardComponent,
+    ProfileComponent,
+    ProductionComponent,
+    SalesComponent,
+    PurchaseComponent,
+    HrComponent
   ],
   imports: [
     BrowserModule,
