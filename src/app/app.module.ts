@@ -1,6 +1,8 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import {NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
+import { HttpClientModule } from '@angular/common/http';
+
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -13,6 +15,12 @@ import { ProductionComponent } from './production/production.component';
 import { SalesComponent } from './sales/sales.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { HrComponent } from './hr/hr.component';
+import { DbrepositoryService } from './services/dbrepository.service';
+import { EmployeeComponent } from './employee/employee.component';
+import { PersonalComponent } from './personal/personal.component';
+import { ShiftsComponent } from './shifts/shifts.component';
+import { JobcandidateComponent } from './jobcandidate/jobcandidate.component';
+
 
 
 
@@ -22,19 +30,24 @@ import { HrComponent } from './hr/hr.component';
     HeaderComponent,
     FooterComponent,
     LeftsideComponent,
-      DashboardComponent,
+    DashboardComponent,
     ProfileComponent,
     ProductionComponent,
     SalesComponent,
     PurchaseComponent,
-    HrComponent
+    HrComponent,
+    EmployeeComponent,
+    PersonalComponent,
+    ShiftsComponent,
+    JobcandidateComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
+    HttpClientModule,
     NgbModule
   ],
-  providers: [],
+  providers: [DbrepositoryService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

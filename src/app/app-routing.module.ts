@@ -6,6 +6,10 @@ import { ProductionComponent } from './production/production.component';
 import { SalesComponent } from './sales/sales.component';
 import { PurchaseComponent } from './purchase/purchase.component';
 import { HrComponent } from './hr/hr.component';
+import { EmployeeComponent } from './employee/employee.component';
+import { PersonalComponent } from './personal/personal.component';
+import { ShiftsComponent } from './shifts/shifts.component';
+import { JobcandidateComponent } from './jobcandidate/jobcandidate.component';
 
 const routes: Routes = [
   {
@@ -35,8 +39,27 @@ const routes: Routes = [
    },
    {
     path: 'hr',
-    component: HrComponent
-   },
+    component: HrComponent,
+    children: [
+      { path: '', redirectTo: 'employee', pathMatch: 'full' },
+      {
+        path: 'employee',
+        component: EmployeeComponent
+       },
+       {
+        path: 'personal',
+        component: PersonalComponent
+       },
+       {
+        path: 'shifts',
+        component: ShiftsComponent
+       },
+       {
+        path: 'jobcandiate',
+        component: JobcandidateComponent
+       }
+    ]
+   }
 ];
 
 @NgModule({
