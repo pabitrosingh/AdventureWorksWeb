@@ -1,0 +1,20 @@
+:host >>> .btn-link{
+  color:black;
+  text-decoration: none;
+}
+:host >>> .btn-link:focus{
+  color:black;
+  text-decoration: none;
+}
+:host >>> .card-header{
+  background-color: #17a2b8;
+}
+
+:host >>> .card-body{
+  border-left:solid 1px #17a2b8;
+  border-right:solid 1px #17a2b8;
+}
+
+:host >>> .card-body:last-child{
+  border-bottom:solid 1px #17a2b8;
+}

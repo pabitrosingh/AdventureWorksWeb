@@ -2,7 +2,7 @@ import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
-
+import { FormsModule } from '@angular/forms';
 
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
@@ -20,6 +20,17 @@ import { EmployeeComponent } from './employee/employee.component';
 import { PersonalComponent } from './personal/personal.component';
 import { ShiftsComponent } from './shifts/shifts.component';
 import { JobcandidateComponent } from './jobcandidate/jobcandidate.component';
+import { NotfoundComponent } from './notfound/notfound.component';
+import { ProductionLineComponent } from './production-line/production-line.component';
+import { ProductComponent } from './product/product.component';
+import { VendorsComponent } from './vendors/vendors.component';
+import { ShippingComponent } from './shipping/shipping.component';
+import { SalesOrderComponent } from './sales-order/sales-order.component';
+import { OffersComponent } from './offers/offers.component';
+import { StoreComponent } from './store/store.component';
+import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
+import { InventoryComponent } from './inventory/inventory.component';
+import { WorkOrderComponent } from './work-order/work-order.component';
 
 
 
@@ -39,12 +50,24 @@ import { JobcandidateComponent } from './jobcandidate/jobcandidate.component';
     EmployeeComponent,
     PersonalComponent,
     ShiftsComponent,
-    JobcandidateComponent
+    JobcandidateComponent,
+    NotfoundComponent,
+    ProductionLineComponent,
+    ProductComponent,
+    VendorsComponent,
+    ShippingComponent,
+    SalesOrderComponent,
+    OffersComponent,
+    StoreComponent,
+    PurchaseOrderComponent,
+    InventoryComponent,
+    WorkOrderComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     HttpClientModule,
+    FormsModule,
     NgbModule
   ],
   providers: [DbrepositoryService],
