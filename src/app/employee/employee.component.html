@@ -1,309 +1,346 @@
-<br/>
+<br />
+
 <div class="form-group row">
-  <label for="IDTxtEmployeeID" class="col-lx-2 col-lg-2 col-md-9 col-sm-12 col-12 col-form-label" tabindex="1" >Employee ID</label>
-  <div class="col-lx-6 col-lg-6 col-md-6 col-sm-12 col-12">
-    <input type="text" class="form-control" id="IDTxtEmployeeID" placeholder="Employee ID" tabindex="2">
+  <div class="col-lx-6 col-lg-6 col-md-6 col-sm-12 col-12 input-group">
+    <div class="input-group-prepend">
+      <div class="input-group-text">Employee ID</div>
+    </div>
+    <input type="text" class="form-control" [class.Invalid-border]="IDTxtEmployeeIDSearchRef.touched && IDTxtEmployeeIDSearchRef.invalid"
+      id="IDTxtEmployeeIDSearch" #IDTxtEmployeeIDSearchRef="ngModel" name="IDTxtEmployeeIDSearch" [(ngModel)]="IDTxtEmployeeIDSearch"
+      placeholder="Employee ID" tabindex="1" required pattern="[0-9]*">
+
   </div>
   <div class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12">
-    <button class="btn btn-primary" tabindex="3">Search</button>
+    <button id="BtnSearch" class="btn btn-primary" tabindex="2" (click)="OnBtnSearchClick(IDTxtEmployeeIDSearchRef.value)"
+      [disabled]="IDTxtEmployeeIDSearchRef.touched && IDTxtEmployeeIDSearchRef.invalid">Search</button>
   </div>
 </div>
-<div>
-<ngb-accordion [closeOthers]="true">
-  <ngb-panel title="HR-Section">
-    <ng-template ngbPanelContent>
-      <form>
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  First radio
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  Second radio
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                <label class="form-check-label" for="gridRadios3">
-                  Third disabled radio
-                </label>
+
+<p [class.Invalid-helper]="IDTxtEmployeeIDSearchRef.invalid && IDTxtEmployeeIDSearchRef.dirty" *ngIf="IDTxtEmployeeIDSearchRef.invalid && IDTxtEmployeeIDSearchRef.dirty">This
+  field is required.</p>
+
+<div class="row">
+  <div class="col-md-12 col-sm-12 col-12">
+    <ngb-accordion [closeOthers]="true">
+
+      <ngb-panel title="HR-Section">
+        <ng-template ngbPanelContent>
+          <form>
+            <div class="form-group row">
+              <label for="IDTxtEmployeeID" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Employee
+                ID</label>
+              <div class="col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" name="IDTxtEmployeeID" id="IDTxtEmployeeID" #IDTxtEmployeeID placeholder="Employee ID"
+                  readonly="readonly" class="form-control" value="{{ EmpList[0]?.EmployeeID }}">
               </div>
             </div>
-          </div>
-        </fieldset>
-        <div class="form-group row">
-          <div class="col-sm-2">Checkbox</div>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
-              <label class="form-check-label" for="gridCheck1">
-                Example checkbox
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </div>
-        </div>
-      </form>
-    </ng-template>
-  </ngb-panel>
-  <ngb-panel title="Personal Information">
-    <ng-template ngbPanelContent>
-      <form>
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  First radio
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  Second radio
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                <label class="form-check-label" for="gridRadios3">
-                  Third disabled radio
-                </label>
+            <div class="form-group row">
+              <label for="IDTxtDesignation" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Designation</label>
+              <div class="col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" name="IDTxtDesignation" id="IDTxtDesignation" #IDTxtDesignation placeholder="Designation"
+                  class="form-control" value="{{ EmpList[0]?.Designation }}">
               </div>
             </div>
-          </div>
-        </fieldset>
-        <div class="form-group row">
-          <div class="col-sm-2">Checkbox</div>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
-              <label class="form-check-label" for="gridCheck1">
-                Example checkbox
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </div>
-        </div>
-      </form>
-    </ng-template>
-  </ngb-panel>
-  <ngb-panel title="Contact Information">
-    <ng-template ngbPanelContent>
-      <form>
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  First radio
-                </label>
+            <div class="form-group row">
+              <div class="col-lx-2 col-lg-2 col-md-12 col-sm-12 col-12">
+                <label for="IDTxtDepartment" class="form-label">Department</label>
               </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  Second radio
-                </label>
+              <div class="col-lx-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                <input type="text" name="IDTxtDepartment" id="IDTxtDepartment" #IDTxtDesignation placeholder="Department Name"
+                  class="form-control">
               </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                <label class="form-check-label" for="gridRadios3">
-                  Third disabled radio
-                </label>
+              <div class="col-lx-2 col-lg-2 col-md-12 col-sm-12 col-12">
+                <label for="IDTxtGroupName" class="form-label">Group</label>
+              </div>
+              <div class="col-lx-4 col-lg-4 col-md-12 col-sm-12 col-12">
+                <input type="text" name="IDTxtGroupName" id="IDTxtGroupName" #IDTxtGroupName placeholder="Department Group"
+                  class="form-control">
               </div>
             </div>
-          </div>
-        </fieldset>
-        <div class="form-group row">
-          <div class="col-sm-2">Checkbox</div>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
-              <label class="form-check-label" for="gridCheck1">
-                Example checkbox
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </div>
-        </div>
-      </form>
-    </ng-template>
-  </ngb-panel>
-  <ngb-panel title="Professional Information">
-    <ng-template ngbPanelContent>
-      <form>
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  First radio
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  Second radio
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                <label class="form-check-label" for="gridRadios3">
-                  Third disabled radio
-                </label>
+            <div class="form-group row">
+              <label for="IDTxtGradeBand" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Grade-Band</label>
+              <div class="col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" name="IDTxtGradeBand" id="IDTxtGrade-Band" #IDTxtGradeBand placeholder="Grade (or) Employee Band"
+                  class="form-control">
               </div>
             </div>
-          </div>
-        </fieldset>
-        <div class="form-group row">
-          <div class="col-sm-2">Checkbox</div>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
-              <label class="form-check-label" for="gridCheck1">
-                Example checkbox
-              </label>
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
-          </div>
-        </div>
-      </form>
-    </ng-template>
-  </ngb-panel>
-  <ngb-panel title="Academic Information">
-    <ng-template ngbPanelContent>
-      <form>
-        <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Email</label>
-          <div class="col-sm-10">
-            <input type="email" class="form-control" id="inputEmail3" placeholder="Email">
-          </div>
-        </div>
-        <div class="form-group row">
-          <label for="inputPassword3" class="col-sm-2 col-form-label">Password</label>
-          <div class="col-sm-10">
-            <input type="password" class="form-control" id="inputPassword3" placeholder="Password">
-          </div>
-        </div>
-        <fieldset class="form-group">
-          <div class="row">
-            <legend class="col-form-label col-sm-2 pt-0">Radios</legend>
-            <div class="col-sm-10">
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios1" value="option1" checked>
-                <label class="form-check-label" for="gridRadios1">
-                  First radio
-                </label>
-              </div>
-              <div class="form-check">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios2" value="option2">
-                <label class="form-check-label" for="gridRadios2">
-                  Second radio
-                </label>
-              </div>
-              <div class="form-check disabled">
-                <input class="form-check-input" type="radio" name="gridRadios" id="gridRadios3" value="option3" disabled>
-                <label class="form-check-label" for="gridRadios3">
-                  Third disabled radio
-                </label>
+            <div class="form-group row">
+              <label for="IDTxtDateofJoining" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Date
+                of
+                Joining</label>
+              <div class="col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" name="IDTxtDateofJoining" id="IDTxtDateofJoining" #IDTxtDateofJoining placeholder="YYYY-MM-DD"
+                  class="form-control">
               </div>
             </div>
-          </div>
-        </fieldset>
-        <div class="form-group row">
-          <div class="col-sm-2">Checkbox</div>
-          <div class="col-sm-10">
-            <div class="form-check">
-              <input class="form-check-input" type="checkbox" id="gridCheck1">
-              <label class="form-check-label" for="gridCheck1">
-                Example checkbox
-              </label>
+            <div class="form-group row">
+              <label for="IDTxtDateofCurrentShift" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Current
+                Shift</label>
+              <div class="col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" name="IDTxtDateofCurrentShift" id="IDTxtDateofCurrentShift" #IDTxtDateofCurrentShift
+                  placeholder="Shift Wroking" class="form-control">
+              </div>
             </div>
+            <div class="form-group row">
+              <div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <label for="IDTxtSL" class="form-label">Total SL Used</label>
+                <input type="text" id="IDTxtSL" name="IDTxtSL" #IDTxtSL class="form-control" readonly>
+              </div>
+              <div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <label for="IDTxtPL" class="form-label">Total EL Used</label>
+                <input type="text" id="IDTxtPL" name="IDTxtPL" #IDTxtSL class="form-control" readonly>
+              </div>
+              <div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <label for="IDTxtBL" class="form-label">Available Leave Balance</label>
+                <input type="text" id="IDTxtBL" name="IDTxtBL" #IDTxtSL class="form-control" readonly>
+              </div>
+            </div>
+          </form>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Personal Information">
+        <ng-template ngbPanelContent>
+          <form>
+            <div class="form-group row">
+              <div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <label for="IDTxtFirstName" class="form-label">First Name</label>
+                <input type="text" id="IDTxtFirstName" name="IDTxtFirstName" #IDTxtFirstName class="form-control">
+              </div>
+              <div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <label for="IDTxtMiddleName" class="form-label">Middle Name</label>
+                <input type="text" id="IDTxtMiddleName" name="IDTxtMiddleName" #IDTxtMiddleName class="form-control">
+              </div>
+              <div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
+                <label for="IDTxtLastName" class="form-label">Last Name</label>
+                <input type="text" id="IDTxtLastName" name="IDTxtLastName" #IDTxtLastName class="form-control">
+              </div>
+            </div>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12 pt-0">Gender</legend>
+                <div class="col-md-6 col-sm-12 col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioGender" id="RdioGenderMale" value="Male"
+                      checked>
+                    <label class="form-check-label" for="RdioGenderMale">
+                      Male
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioGender" id="RdioGenderFeMale" value="Female">
+                    <label class="form-check-label" for="RdioGenderFeMale">
+                      Female
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioGender" id="RdioGenderTransgender" value="Transgender">
+                    <label class="form-check-label" for="RdioGenderTransgender">
+                      Transgender
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <fieldset class="form-group">
+              <div class="row">
+                <legend class="col-form-label col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12 pt-0">Marital Status</legend>
+                <div class="col-md-6 col-sm-12 col-12">
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioMaritalStatus" id="RdioGenderMarried" value="Married"
+                      checked>
+                    <label class="form-check-label" for="RdioGenderMarried">
+                      Married
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioMaritalStatus" id="RdioGenderSingle" value="Single">
+                    <label class="form-check-label" for="RdioGenderSingle">
+                      Single
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioMaritalStatus" id="RdioGenderWidowed" value="Widowed">
+                    <label class="form-check-label" for="RdioGenderWidowed">
+                      Widowed
+                    </label>
+                  </div>
+                  <div class="form-check">
+                    <input class="form-check-input" type="radio" name="RdioMaritalStatus" id="RdioGenderDivorced" value="Divorced">
+                    <label class="form-check-label" for="RdioGenderDivorced">
+                      Divorced
+                    </label>
+                  </div>
+                </div>
+              </div>
+            </fieldset>
+            <div class="form-group row">
+              <!-- <label for="IDTxtDateofBirth" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Date of Birth</label>
+              <div class="col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" NgbDatepicker name="IDTxtDateofBirth" id="IDTxtDateofBirth" #IDTxtDateofBirth placeholder="YYYY-MM-DD"
+                  class="form-control">
+              </div> -->
+              <label for="IDTxtDateofBirth" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Date of
+                Birth</label>
+              <div class="input-group col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12">
+                <input type="text" ngbDatepicker [minDate]="{year: 1900, month: 1, day: 1}" id="IDTxtDateofBirth" name="IDTxtDateofBirth"
+                  #IDTxtDateofBirth="ngbDatepicker" class="form-control" placeholder="YYYY-MM-DD">
+                <div class="input-group-apppend">
+                  <button class="btn btn-outline-secondary" (click)="IDTxtDateofBirth.toggle()" type="button">
+                    <img src="/assets/icons/svg/calendar.svg" alt="calendar">
+                  </button>
+                </div>
+              </div>
+            </div>
+          </form>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Contact Information">
+        <ng-template ngbPanelContent>
+          <form>
+            <div class="form-group row">
+              <label for="IDTxtEmail" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Email</label>
+              <div class="col-sm-10">
+                <input type="email" id="IDTxtEmail" name="IDTxtEmail" #IDTxtEmail class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="eMail Address">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="IDTxtMobile" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Mobile/Land
+                Line</label>
+              <div class="col-sm-10">
+                <input type="text" id="IDTxtMobile" name="IDTxtMobile" #IDTxtMobile class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="Contact number">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="IDTxtMobile" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Address Line</label>
+              <div class="col-sm-10">
+                <textarea rows="3" cols="10" id="IDTxtMobile" name="IDTxtMobile" #IDTxtMobile class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="Current Address" style="resize: none;"></textarea>
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="IDTxtCountry" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Country</label>
+              <div class="col-sm-10">
+                <input type="text" id="IDTxtCountry" name="IDTxtCountry" #IDTxtCountry class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="Country Name">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="IDTxtStateProvince" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">State/Province</label>
+              <div class="col-sm-10">
+                <input type="text" id="IDTxtStateProvince" name="IDTxtStateProvince" #IDTxtStateProvince class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="State / Province">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="IDTxtCity" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">City</label>
+              <div class="col-sm-10">
+                <input type="text" id="IDTxtCity" name="IDTxtCity" #IDTxtCity class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="City Name">
+              </div>
+            </div>
+            <div class="form-group row">
+              <label for="IDTxtPostalCode" class="col-lx-2 col-lg-2 col-md-3 col-sm-12 col-12 col-form-label">Postal
+                Code</label>
+              <div class="col-sm-10">
+                <input type="text" id="IDTxtPostalCode" name="IDTxtPostalCode" #IDTxtPostalCode class="form-control col-lx-10 col-lg-10 col-md-9 col-sm-12 col-12"
+                  placeholder="Postal PIN / ZIP Code">
+              </div>
+            </div>
+          </form>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Academic Information">
+        <ng-template ngbPanelContent>
+          <div class="table-responsive-sm table-responsive-md">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Education</th>
+                  <th scope="col">University / Board</th>
+                  <th scope="col">School / Collge</th>
+                  <th scope="col">Course / Stream</th>
+                  <th scope="col">GPA / Avg</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-        <div class="form-group row">
-          <div class="col-sm-10">
-            <button type="submit" class="btn btn-primary">Sign in</button>
+        </ng-template>
+      </ngb-panel>
+
+      <ngb-panel title="Professional Information">
+        <ng-template ngbPanelContent>
+          <div class="table-responsive-sm table-responsive-md">
+            <table class="table">
+              <thead class="thead-light">
+                <tr>
+                  <th scope="col">#</th>
+                  <th scope="col">Organization</th>
+                  <th scope="col">Designation</th>
+                  <th scope="col">Date Of Joining</th>
+                  <th scope="col">Date Of Leaving</th>
+                  <th scope="col">Skills & Projects</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <th scope="row">1</th>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                  <td>@mdo</td>
+                </tr>
+              </tbody>
+            </table>
           </div>
-        </div>
-      </form>
-    </ng-template>
-  </ngb-panel>
- </ngb-accordion>
+        </ng-template>
+      </ngb-panel>
+
+
+    </ngb-accordion>
+  </div>
 </div>
+<br/>
+<div class="row">
+<div class="col-md-6 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header bg-warning font-weight-bold">
+          Attendance Report
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</div>
+<div class="col-md-6 col-sm-12 col-12">
+    <div class="card">
+        <div class="card-header bg-warning font-weight-bold">
+          OT Hours
+        </div>
+        <div class="card-body">
+          <h5 class="card-title">Special title treatment</h5>
+          <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
+          <a href="#" class="btn btn-primary">Go somewhere</a>
+        </div>
+      </div>
+</div>
+</div>
+<br/>

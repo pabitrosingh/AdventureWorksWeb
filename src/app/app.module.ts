@@ -31,6 +31,7 @@ import { StoreComponent } from './store/store.component';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
+import { StockComponent } from './stock/stock.component';
 
 
 
@@ -61,7 +62,8 @@ import { WorkOrderComponent } from './work-order/work-order.component';
     StoreComponent,
     PurchaseOrderComponent,
     InventoryComponent,
-    WorkOrderComponent
+    WorkOrderComponent,
+    StockComponent
   ],
   imports: [
     BrowserModule,

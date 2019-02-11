@@ -21,6 +21,7 @@ import { PurchaseOrderComponent } from './purchase-order/purchase-order.componen
 import { PurchaseComponent } from './purchase/purchase.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
+import { StockComponent } from './stock/stock.component';
 
 const routes: Routes = [
   {
@@ -78,8 +79,8 @@ const routes: Routes = [
     component: PurchaseComponent,
     children: [
       {
-        path: 'product',
-        component: ProductComponent
+        path: 'stock',
+        component: StockComponent
       },
       {
         path: 'purchaseorder',
@@ -93,7 +94,7 @@ const routes: Routes = [
         path: 'shipping',
         component: ShippingComponent
       },
-      { path: '', redirectTo: 'product', pathMatch: 'full' }
+      { path: '', redirectTo: 'stock', pathMatch: 'full' }
     ]
   },
   {
