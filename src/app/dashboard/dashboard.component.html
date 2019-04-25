@@ -1,71 +1,68 @@
-<br/>
+<br />
 <div class="row">
-  <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
-    <div class="card" style="height:20rem;width:20rem">
-      <br/>
-      <img class="card-img-top" src="/assets/icons/svg/bar-chart.svg" alt="Card image cap">
+  <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="card" style="height:25rem;width:30rem">
+      <br />
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
+        <h5 class="card-title">Territory Sales</h5>
+        <a href="#" class="btn btn-info">View Detail Report</a>
       </div>
     </div>
   </div>
-  <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
-    <div class="card" style="height:20rem;width:20rem">
-      <br/>
-      <img class="card-img-top" src="/assets/icons/svg/pie-chart.svg" alt="Card image cap">
+  <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="card" style="height:25rem;width:30rem">
+      <br />
+      <ngx-charts-bar-vertical-2d [view]="[350, 225]" [scheme]="BarChartColorScheme" [results]="BarChartDataSet"
+        [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]='false' [showXAxisLabel]="true"
+        [showYAxisLabel]="true" xAxisLabel='Quater' yAxisLabel="Sales">
+      </ngx-charts-bar-vertical-2d>
       <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
-      </div>
-    </div>
-  </div>
-  <div class="col-lx-4 col-lg-4 col-md-12 col-sm-12 col-12">
-    <div class="card" style="height:20rem;width:20rem">
-      <br/>
-      <img class="card-img-top" src="/assets/icons/svg/cart.svg" alt="Card image cap">
-      <div class="card-body">
-        <h5 class="card-title">Card title</h5>
-        <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-        <a href="#" class="btn btn-info">Go somewhere</a>
+        <h5 class="card-title">Quaterly Products Sales</h5>
+        <a href="#" class="btn btn-info">View Detail Report</a>
       </div>
     </div>
   </div>
 </div>
-<br/>
+<br />
 <div class="row">
-<div class="col-lx-8 col-lg-8 col-md-8 col-sm-12 col-12">
-<span>Line Chart</span>
-<div *ngIf="chart">
-  <canvas #IDBarChartCanvasref id="IDBarChartCanvas">{{ chart }}</canvas>
-</div>
-</div>
-<div class="col-lx-4 col-lg-4 col-md-4 col-sm-12 col-12">
-  <table class="table table-striped table-hover ">
-    <thead class="thead-light">
-      <tr>
-        <th scope="col" colspan="3"><img src="/assets/icons/svg/chat.svg" alt="Quick Access" style ="height: 2rem">&nbsp;Quick Access</th>
-      </tr>
-    </thead>
-    <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>Mark</td>
-        <td>Otto</td>
-      </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Jacob</td>
-        <td>Thornton</td>
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>Larry</td>
-        <td>the Bird</td>
-      </tr>
-    </tbody>
-  </table>
-</div>
+  <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="card" style="height:25rem;width:30rem">
+      <br />
+      <ngx-charts-pie-grid [view]="[350, 225]" [results]="PiGridChartDataSet">
+      </ngx-charts-pie-grid>
+      <div class="card-body">
+        <h5 class="card-title">Top Selling Products</h5>
+        <a href="#" class="btn btn-info">View Detail Report</a>
+      </div>
+    </div>
+  </div>
+  <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
+    <div class="card" style="height:25rem;width:30rem">
+      <table class="table table-striped table-hover ">
+        <thead class="thead-light">
+          <tr>
+            <th scope="col" colspan="3"><img src="/assets/icons/svg/chat.svg" alt="Quick Access"
+                style="height: 2rem">&nbsp;Quick Access</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>Otto</td>
+          </tr>
+          <tr>
+            <th scope="row">2</th>
+            <td>Jacob</td>
+            <td>Thornton</td>
+          </tr>
+          <tr>
+            <th scope="row">3</th>
+            <td>Larry</td>
+            <td>the Bird</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
 </div>

@@ -3,7 +3,7 @@ import { NgModule } from '@angular/core';
 import { NgbModule} from '@ng-bootstrap/ng-bootstrap';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule } from '@angular/forms';
-
+import { BrowserAnimationsModule  } from '@angular/platform-browser/animations';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { HeaderComponent } from './shared/header/header.component';
@@ -32,7 +32,7 @@ import { PurchaseOrderComponent } from './purchase-order/purchase-order.componen
 import { InventoryComponent } from './inventory/inventory.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { StockComponent } from './stock/stock.component';
-
+import { NgxChartsModule } from '@swimlane/ngx-charts';
 
 
 
@@ -67,10 +67,12 @@ import { StockComponent } from './stock/stock.component';
   ],
   imports: [
     BrowserModule,
+    BrowserAnimationsModule ,
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    NgbModule
+    NgbModule,
+    NgxChartsModule
   ],
   providers: [DbrepositoryService],
   bootstrap: [AppComponent]

@@ -37,6 +37,10 @@ const routes: Routes = [
     component: ProductionComponent,
     children: [
       {
+        path: 'productionline',
+        component: ProductionLineComponent
+      },
+      {
         path: 'inventory',
         component: InventoryComponent
       },
@@ -45,14 +49,10 @@ const routes: Routes = [
         component: WorkOrderComponent
       },
       {
-        path: 'productionline',
-        component: ProductionLineComponent
-      },
-      {
         path: 'product',
         component: ProductComponent
       },
-      { path: '', redirectTo: 'inventory', pathMatch: 'full' }
+      { path: '', redirectTo: 'productionline', pathMatch: 'full' }
     ]
   },
   {

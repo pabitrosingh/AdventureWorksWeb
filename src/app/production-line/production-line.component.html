@@ -1,3 +1,142 @@
-<p>
-  production-line works!
-</p>
+<br />
+<div class="row">
+  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+    <div class="arrow_box arrow_color1 mx-auto align-middle">
+      <h5><span class="badge">Forming</span></h5>
+      <h2><span class="badge badge-light">9567</span></h2>
+    </div>
+  </div>
+  <br />
+  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+    <div class="arrow_box arrow_color1 mx-auto align-middle">
+      <h5><span class="badge">Welding</span></h5>
+      <h2><span class="badge badge-light">5923</span></h2>
+    </div>
+  </div>
+  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+    <div class="arrow_box arrow_color1 mx-auto align-middle">
+      <h5><span class="badge">Debur Polish</span></h5>
+      <h2><span class="badge badge-light">1490</span></h2>
+    </div>
+  </div>
+  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+    <div class="arrow_box arrow_color1 mx-auto align-middle">
+      <h5><span class="badge">Paint</span></h5>
+      <h2><span class="badge badge-light">1490</span></h2>
+    </div>
+  </div>
+  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+    <div class="arrow_box arrow_color1 mx-auto align-middle">
+      <h5><span class="badge">Sub-assembly</span></h5>
+      <h2><span class="badge badge-light">30107</span></h2>
+    </div>
+  </div>
+  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+    <div class="arrow_box arrow_color1 mx-auto align-middle">
+      <h5><span class="badge">Assembly</span></h5>
+      <h2><span class="badge badge-light">18554</span></h2>
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="card">
+  <div class="card-header text-light bg-secondary">
+    Work Order Details
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <h5 class="card-title">Received</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderReceivedDataSet" cardColor='skyblue'
+              bandColor='#b52d30'>
+            </ngx-charts-number-card>
+          </li>
+          <li class="list-group-item"><a href="/production/workorder" class="btn btn-info">Oder Routing</a></li>
+        </ul>
+      </div>
+      <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <h5 class="card-title">Completed</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderCompletedDataSet" cardColor='olive'
+              bandColor='#b52d30'>
+            </ngx-charts-number-card>
+          </li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">Start Shipping</a></li>
+        </ul>
+      </div>
+      <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <h5 class="card-title">Delayed</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderDelayedDataSet" cardColor='orange'
+              bandColor='#b52d30'>
+            </ngx-charts-number-card>
+          </li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">View Reasons</a></li>
+        </ul>
+      </div>
+      <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+        <h5 class="card-title">Scraped</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderScrappedDataSet" cardColor='#ffc107'
+              bandColor='#b52d30'>
+            </ngx-charts-number-card>
+          </li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">View Reasons</a></li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</div>
+
+<br />
+
+<div class="card">
+  <div class="card-header text-light bg-secondary">
+    Stock & Inventory
+  </div>
+  <div class="card-body">
+    <div class="row">
+      <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
+        <h5 class="card-title">In-Stock</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderReceivedDataSet" cardColor='green'
+              bandColor='#b52d30'>
+            </ngx-charts-number-card>
+          </li>
+          <li class="list-group-item"><a href="/production/workorder" class="btn btn-info">View Details</a></li>
+        </ul>
+      </div>
+      <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
+          <h5 class="card-title">Running Low</h5>
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item">
+              <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderDelayedDataSet" cardColor='Coral'
+                bandColor='#b52d30'>
+              </ngx-charts-number-card>
+            </li>
+            <li class="list-group-item"> <a href="#" class="btn btn-info">View Details</a></li>
+          </ul>
+        </div>
+      <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
+        <h5 class="card-title">Out Of Stock</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">
+            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderCompletedDataSet" cardColor='LightCoral'
+              bandColor='#b52d30'>
+            </ngx-charts-number-card>
+          </li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">Place Purchase Order</a></li>
+        </ul>
+      </div>
+
+    </div>
+  </div>
+</div>
+<br /><br /><br />
