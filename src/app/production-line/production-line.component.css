@@ -38,6 +38,7 @@
 
 .arrow_color1:hover {
   background: #0282c3;
+  cursor: pointer;
 }
 
 .arrow_color1:before {

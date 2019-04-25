@@ -8,60 +8,41 @@ import { DbrepositoryService } from '../services/dbrepository.service';
 })
 export class ProductionLineComponent implements OnInit {
 
-  AssemblyLineDataSet: Array<{ AssemblyName: string , CountWorkOrder: number , RoutingSequence: number }> = [];
+  AssemblyLineDataSet: Array<{ LocationID: number, AssemblyName: string, CountWorkOrder: number, RoutingSequence: number }> = [];
+  WorkOrderReceivedDataSet: any[];
+  WorkOrderCompletedDataSet: any[];
+  WorkOrderDelayedDataSet: any[];
+  WorkOrderScrappedDataSet: any[];
 
   constructor(private DB: DbrepositoryService) {
-      this.GetAssemblyLineData();
-
+    this.GetAssemblyLineData();
+    this.GetWorkOrderDetailsData();
   }
-
-  WorkOrderReceivedDataSet: any[] = [
-    {
-      'name': ' ',
-      'value': 72591
-    },
-  ];
-
-  WorkOrderCompletedDataSet: any[] = [
-    {
-      'name': ' ',
-      'value': 49801
-    },
-  ];
-
-
-  WorkOrderScrappedDataSet: any[] = [
-    {
-      'name': ' ',
-      'value': 728
-    },
-  ];
-
-  WorkOrderDelayedDataSet: any[] = [
-    {
-      'name': ' ',
-      'value': 22790
-    },
-  ];
   ngOnInit() {
   }
 
   GetAssemblyLineData() {
-
-    this.DB.GetAssemblyLineDataFromServer().subscribe(resp => {
-      if ( resp.length > 0) {
-        this.AssemblyLineDataSet = resp.sort(function(c, n ) {
+   this.DB.GetAssemblyLineDataFromServer().subscribe(resp => {
+      if (resp.length > 0) {
+        this.AssemblyLineDataSet = resp.sort(function (c, n) {
           return c.RoutingSequence - n.RoutingSequence;
         });
       }
-      // let obj = { AssemblyName: "Paint",
-      //            CountWorkOrder: this.AssemblyLineDataSet[4].CountWorkOrder + this.AssemblyLineDataSet[3].CountWorkOrder,
-      //            RoutingSequence: 4
-      //           };
-      // this.AssemblyLineDataSet.push(obj);
-      //  this.AssemblyLineDataSet.splice(4,1);
-      //  this.AssemblyLineDataSet.splice(3,1);
-      console.log(this.AssemblyLineDataSet);
     });
-}
+  }
+
+  GetWorkOrderDetailsData() {
+    this.DB.GetWorkOrderDetailsDataFromServer().subscribe(resp => {
+      if ( resp.length > 0 ) {
+          this.WorkOrderReceivedDataSet = [resp[0]];
+          this.WorkOrderCompletedDataSet = [resp[1]];
+          this.WorkOrderDelayedDataSet = [resp[2]];
+          this.WorkOrderScrappedDataSet = [resp[3]];
+      }
+    });
+  }
+  public ViewSelectedAssemblyLineDetails(LocationID: number): void {
+    alert(LocationID);
+  }
+
 }

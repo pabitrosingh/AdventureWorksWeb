@@ -11,6 +11,7 @@ import { IEmployee } from '../viewmodel/employee';
 })
 export class DbrepositoryService {
 
+
   private readonly BASE_URL = environment.API_ENDPOINT;
 
   constructor(private http: HttpClient) { }
@@ -37,9 +38,14 @@ export class DbrepositoryService {
       this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
   }
 
-  GetAssemblyLineDataFromServer(): Observable<{ AssemblyName: string , CountWorkOrder: number , RoutingSequence: number }[]> {
-    return this.http.get<{ AssemblyName: string , CountWorkOrder: number , RoutingSequence: number }[]>(
+  GetAssemblyLineDataFromServer(): Observable<{ LocationID: number, AssemblyName: string ,
+                                                CountWorkOrder: number , RoutingSequence: number }[]> {
+    return this.http.get<{ LocationID: number, AssemblyName: string , CountWorkOrder: number , RoutingSequence: number }[]>(
       this.BASE_URL + `Production/GetAssemblyLineCount`);
   }
 
+  GetWorkOrderDetailsDataFromServer(): Observable<{ name: string,  value: number }[]>  {
+    return this.http.get<{ name: string,  value: number }[]>(
+      this.BASE_URL + `Production/GetWorkOrderDetailsCount`);
+  }
 }
