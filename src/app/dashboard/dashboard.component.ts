@@ -97,7 +97,7 @@ export class DashboardComponent {
     const BarchartSeries = [];
     const BarChartName: Array<string> = [];
     let BarChartDataset: {Year: number , Quater: number , Name: string , Sales: number}[] = [];
-    this.DB.GetQuaterlyProductSalesDataData().subscribe(resp => {
+    this.DB.GetQuaterlyProductSalesDataDataFromServer().subscribe(resp => {
       if (resp.length > 0) {
         BarChartDataset = resp;
       }

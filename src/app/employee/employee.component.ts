@@ -16,7 +16,7 @@ export class EmployeeComponent {
 
   OnBtnSearchClick(empid: Number) {
     alert(empid);
-    this.DB.GetEmployeeDetails(empid)
+    this.DB.GetEmployeeDetailsFromServer(empid)
       .subscribe(resp => {
         if (resp.length > 0) {
           this.EmpList = resp;

@@ -1,40 +1,9 @@
 <br />
 <div class="row">
-  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
+  <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12" *ngFor="let item of AssemblyLineDataSet">
     <div class="arrow_box arrow_color1 mx-auto align-middle">
-      <h5><span class="badge">Forming</span></h5>
-      <h2><span class="badge badge-light">9567</span></h2>
-    </div>
-  </div>
-  <br />
-  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
-    <div class="arrow_box arrow_color1 mx-auto align-middle">
-      <h5><span class="badge">Welding</span></h5>
-      <h2><span class="badge badge-light">5923</span></h2>
-    </div>
-  </div>
-  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
-    <div class="arrow_box arrow_color1 mx-auto align-middle">
-      <h5><span class="badge">Debur Polish</span></h5>
-      <h2><span class="badge badge-light">1490</span></h2>
-    </div>
-  </div>
-  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
-    <div class="arrow_box arrow_color1 mx-auto align-middle">
-      <h5><span class="badge">Paint</span></h5>
-      <h2><span class="badge badge-light">1490</span></h2>
-    </div>
-  </div>
-  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
-    <div class="arrow_box arrow_color1 mx-auto align-middle">
-      <h5><span class="badge">Sub-assembly</span></h5>
-      <h2><span class="badge badge-light">30107</span></h2>
-    </div>
-  </div>
-  <div class="col-lx-2 col-lg-2 col-md-6 col-sm-12 col-12">
-    <div class="arrow_box arrow_color1 mx-auto align-middle">
-      <h5><span class="badge">Assembly</span></h5>
-      <h2><span class="badge badge-light">18554</span></h2>
+      <h5><span class="badge">{{ item.AssemblyName}}</span></h5>
+      <h2><span class="badge badge-light">{{item.CountWorkOrder}}</span></h2>
     </div>
   </div>
 </div>

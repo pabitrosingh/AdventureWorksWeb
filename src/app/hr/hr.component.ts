@@ -16,7 +16,7 @@ export class HrComponent implements OnInit {
   }
   public onBtnGteDepartmentClick() {
     let DeptList: IDepartment[];
-    this.DB.GetDepartments()
+    this.DB.GetDepartmentsFromServer()
            .subscribe(resp => {
               if (resp.length > 0) {
                DeptList = resp;

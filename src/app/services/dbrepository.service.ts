@@ -15,25 +15,31 @@ export class DbrepositoryService {
 
   constructor(private http: HttpClient) { }
 
-  public GetDepartments(): Observable<IDepartment[]> {
+  public GetDepartmentsFromServer(): Observable<IDepartment[]> {
     return this.http.get<IDepartment[]>(this.BASE_URL + `Department/GetDepartmentDetails`);
   }
 
-  public GetDepartment(deptid: Number): Observable<IDepartment> {
-    return this.http.get<IDepartment>(this.BASE_URL + `Department/GetDepartmentDetails/${deptid}` );
+  public GetDepartmentFromServer(deptid: Number): Observable<IDepartment> {
+    return this.http.get<IDepartment>(this.BASE_URL + `Department/GetDepartmentDetails/${deptid}`);
   }
 
-  public GetEmployeeDetails(empid: Number): Observable<IEmployee[]> {
-     return this.http.get<IEmployee[]>(this.BASE_URL + `Employee/GetEmployeeDetails/${empid}` );
+  public GetEmployeeDetailsFromServer(empid: Number): Observable<IEmployee[]> {
+    return this.http.get<IEmployee[]>(this.BASE_URL + `Employee/GetEmployeeDetails/${empid}`);
   }
 
-  public GetCurrentYearTerritorySalesReportData(): Observable<{Year: number , Name: string , Sales: number}[]> {
-    return this.http.get<{Year: number , Name: string , Sales: number}[]>(
+  public GetCurrentYearTerritorySalesReportDataFromServer(): Observable<{ Year: number, Name: string, Sales: number }[]> {
+    return this.http.get<{ Year: number, Name: string, Sales: number }[]>(
       this.BASE_URL + `Sales/GetCurrentYearTerritorySalesReport`);
- }
+  }
 
- public GetQuaterlyProductSalesDataData(): Observable<{Year: number , Quater: number , Name: string , Sales: number}[]> {
-  return this.http.get<{Year: number , Quater: number , Name: string , Sales: number}[]>(
-    this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
-}
+  public GetQuaterlyProductSalesDataDataFromServer(): Observable<{ Year: number, Quater: number, Name: string, Sales: number }[]> {
+    return this.http.get<{ Year: number, Quater: number, Name: string, Sales: number }[]>(
+      this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
+  }
+
+  GetAssemblyLineDataFromServer(): Observable<{ AssemblyName: string , CountWorkOrder: number , RoutingSequence: number }[]> {
+    return this.http.get<{ AssemblyName: string , CountWorkOrder: number , RoutingSequence: number }[]>(
+      this.BASE_URL + `Production/GetAssemblyLineCount`);
+  }
+
 }
