@@ -49,14 +49,14 @@
   border-left: 25px solid #0282c3;
 }
 
-.col-md-12{
+.col-md-12 .arrow_box {
   margin-bottom: 2px;
 }
 
-.col-sm-12 {
+.col-sm-12  .arrow_box {
   margin-bottom: 2px;
 }
 
-.col-12 {
+.col-12 .arrow_box {
   margin-bottom: 2px;
 }

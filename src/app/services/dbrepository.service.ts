@@ -48,4 +48,9 @@ export class DbrepositoryService {
     return this.http.get<{ name: string,  value: number }[]>(
       this.BASE_URL + `Production/GetWorkOrderDetailsCount`);
   }
+
+  GetStockInventoryDataFromServer(): Observable<{ name: string,  value: number }[]>  {
+    return this.http.get<{ name: string,  value: number }[]>(
+      this.BASE_URL + `Production/GetStockInventoryCount`);
+  }
 }

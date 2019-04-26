@@ -1,7 +1,7 @@
 <br />
 <div class="row">
   <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12" *ngFor="let item of AssemblyLineDataSet">
-    <div class="arrow_box arrow_color1 mx-auto align-middle" (click)="ViewSelectedAssemblyLineDetails(item.LocationID)" >
+    <div class="arrow_box arrow_color1 mx-auto align-middle" (click)="ViewSelectedAssemblyLineDetails(item.LocationID)">
       <h5><span class="badge">{{ item.AssemblyName}}</span></h5>
       <h2><span class="badge badge-light">{{item.CountWorkOrder}}</span></h2>
     </div>
@@ -71,40 +71,17 @@
   </div>
   <div class="card-body">
     <div class="row">
-      <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
-        <h5 class="card-title">In-Stock</h5>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderReceivedDataSet" cardColor='green'
-              bandColor='#b52d30'>
-            </ngx-charts-number-card>
-          </li>
-          <li class="list-group-item"><a href="/production/workorder" class="btn btn-info">View Details</a></li>
-        </ul>
-      </div>
-      <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
-          <h5 class="card-title">Running Low</h5>
-          <ul class="list-group list-group-flush">
-            <li class="list-group-item">
-              <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderDelayedDataSet" cardColor='Coral'
-                bandColor='#b52d30'>
-              </ngx-charts-number-card>
-            </li>
-            <li class="list-group-item"> <a href="#" class="btn btn-info">View Details</a></li>
-          </ul>
-        </div>
-      <div class="col-lx-4 col-lg-4 col-md-6 col-sm-12 col-12">
-        <h5 class="card-title">Out Of Stock</h5>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">
-            <ngx-charts-number-card [view]="[150, 150]" [results]="WorkOrderCompletedDataSet" cardColor='LightCoral'
-              bandColor='#b52d30'>
-            </ngx-charts-number-card>
-          </li>
+      <div class="col-lx-12 col-lg-12 col-md-12 d-none d-sm-none d-md-block d-lg-block d-lx-block ">
+        <ngx-charts-pie-grid [results]="StockInventoryDataSet">
+        </ngx-charts-pie-grid>
+        <!-- <ul class="list-group list-group">
           <li class="list-group-item"> <a href="#" class="btn btn-info">Place Purchase Order</a></li>
-        </ul>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">Place Purchase Order</a></li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">Place Purchase Order</a></li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">Place Purchase Order</a></li>
+          <li class="list-group-item"> <a href="#" class="btn btn-info">Place Purchase Order</a></li>
+        </ul> -->
       </div>
-
     </div>
   </div>
 </div>
