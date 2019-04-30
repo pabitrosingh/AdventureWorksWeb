@@ -22,6 +22,7 @@ import { PurchaseComponent } from './purchase/purchase.component';
 import { InventoryComponent } from './inventory/inventory.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { StockComponent } from './stock/stock.component';
+import { AssemblyLineComponent } from './assembly-line/assembly-line.component';
 
 const routes: Routes = [
   {
@@ -41,17 +42,21 @@ const routes: Routes = [
         component: ProductionLineComponent
       },
       {
-        path: 'inventory',
-        component: InventoryComponent
-      },
-      {
         path: 'workorder',
         component: WorkOrderComponent
       },
       {
-        path: 'product',
-        component: ProductComponent
+        path: 'inventory',
+        component: InventoryComponent
       },
+      {
+        path: 'assemblyline',
+        component: AssemblyLineComponent
+      },
+      // {
+      //   path: 'assemblyline/:locationid',
+      //   component: AssemblyLineComponent
+      // },
       { path: '', redirectTo: 'productionline', pathMatch: 'full' }
     ]
   },
@@ -59,6 +64,10 @@ const routes: Routes = [
     path: 'sales',
     component: SalesComponent,
     children: [
+      {
+        path: 'product',
+        component: ProductComponent
+      },
       {
         path: 'salesorders',
         component: SalesOrderComponent
@@ -71,7 +80,7 @@ const routes: Routes = [
         path: 'store',
         component: StoreComponent
       },
-      { path: '', redirectTo: 'salesorders', pathMatch: 'full' }
+      { path: '', redirectTo: 'product', pathMatch: 'full' }
     ]
   },
   {

@@ -33,6 +33,7 @@ import { InventoryComponent } from './inventory/inventory.component';
 import { WorkOrderComponent } from './work-order/work-order.component';
 import { StockComponent } from './stock/stock.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { AssemblyLineComponent } from './assembly-line/assembly-line.component';
 
 
 
@@ -63,7 +64,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
     PurchaseOrderComponent,
     InventoryComponent,
     WorkOrderComponent,
-    StockComponent
+    StockComponent,
+    AssemblyLineComponent
   ],
   imports: [
     BrowserModule,

@@ -1,5 +1,6 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
 import { DbrepositoryService } from '../services/dbrepository.service';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-production-line',
@@ -16,7 +17,7 @@ export class ProductionLineComponent implements OnInit {
   WorkOrderScrappedDataSet: any[];
   StockInventoryDataSet: any;
 
-  constructor(private DB: DbrepositoryService) {
+  constructor(private DB: DbrepositoryService , private _Router: Router) {
     this.GetAssemblyLineData();
     this.GetWorkOrderDetailsData();
     this.GetStockInventoryData();
@@ -55,6 +56,7 @@ export class ProductionLineComponent implements OnInit {
   }
   public ViewSelectedAssemblyLineDetails(LocationID: number): void {
     alert(LocationID);
+    this._Router.navigate(['/production/assemblyline', { LocationID: LocationID}]);
   }
 
 }
