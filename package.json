@@ -26,6 +26,7 @@
     "bootstrap": "^4.1.3",
     "chart.js": "^2.7.3",
     "core-js": "^2.5.4",
+    "jqwidgets-scripts": "^7.2.0",
     "rxjs": "~6.3.3",
     "zone.js": "~0.8.26"
   },

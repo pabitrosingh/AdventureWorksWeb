@@ -14,7 +14,7 @@ export class AssemblyLineComponent implements OnInit {
   ngOnInit() {
     // this._ActivatedRoute.params.subscribe(p => { console.log(p); } );
     this._ActivatedRoute.paramMap.subscribe(p => { console.log(p.get('LocationID')); });
-    //console.log(this._ActivatedRoute.snapshot.params.LocationID);
+    // console.log(this._ActivatedRoute.snapshot.params.LocationID);
   }
 
 }
