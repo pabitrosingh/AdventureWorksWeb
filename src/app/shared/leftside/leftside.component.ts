@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-leftside',
@@ -7,7 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class LeftsideComponent implements OnInit {
 
-  constructor() { }
+  constructor(public Router: Router) { }
   ngOnInit() {
   }
 
