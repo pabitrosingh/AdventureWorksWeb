@@ -36,7 +36,6 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AssemblyLineComponent } from './assembly-line/assembly-line.component';
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 
-
 @NgModule({
   declarations: [
     jqxGridComponent,
