@@ -35,6 +35,7 @@ import { StockComponent } from './stock/stock.component';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AssemblyLineComponent } from './assembly-line/assembly-line.component';
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
+import { MaterialModule } from './material-module/material-module.module';
 
 @NgModule({
   declarations: [
@@ -73,6 +74,7 @@ import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
+    MaterialModule,
     NgbModule,
     NgxChartsModule
   ],
