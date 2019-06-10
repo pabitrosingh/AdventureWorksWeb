@@ -15,13 +15,11 @@ export class EmployeeComponent {
   constructor(private DB: DbrepositoryService) { }
 
   OnBtnSearchClick(empid: Number) {
-    alert(empid);
     this.DB.GetEmployeeDetailsFromServer(empid)
       .subscribe(resp => {
         if (resp.length > 0) {
           this.EmpList = resp;
         }
-        console.log(this.EmpList);
       },
         error => {
           console.log(error);

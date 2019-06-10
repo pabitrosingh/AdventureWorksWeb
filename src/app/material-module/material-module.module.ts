@@ -1,7 +1,7 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatTreeModule} from '@angular/material/tree';
+import { MatTreeModule} from '@angular/material';
 
 
 @NgModule({
@@ -10,7 +10,6 @@ import { MatTreeModule} from '@angular/material/tree';
     CommonModule
   ],
   declarations: [
-    MatTreeModule
   ],
   exports:[
     MatTreeModule,

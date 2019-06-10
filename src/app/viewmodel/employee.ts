@@ -1,26 +1,25 @@
 export interface IEmployee {
-    EmployeeID: Number;
+    BusinessEntityID: Number;
     Designation: String;
     Department: String ;
-    DepartmentGroup: String;
-    Grade_Band: Number;
-    HireDate:  Date;
+    Group: String;
+    Grade: String;
+    DOJ:  Date;
     CurrentShift: String;
-    SL: Number;
-    EL: Number;
+    SickLeaveHours: Number;
+    VacationHours: Number;
     BL: Number;
     FirstName: String;
     MiddleName: String;
     LastName: String;
     Gender: String;
     MaritalStatus: String;
-    BirthDate: Date;
+    DOB: Date;
     EmailAddress: String;
-    Phone: Number;
+    PhoneNumber: Number;
     AddressLine1: String;
-    CountryRegionName: String;
-    StateProvinceName: String;
+    Country: String;
+    State: String;
     City: String;
     PostalCode: Number;
-    ManagerID: Number;
 }
