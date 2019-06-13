@@ -57,14 +57,14 @@
     </div>
   </div>
   <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12 align-self-center">
-    <div class="btn-group" role="group" aria-label="Basic example">
-      <button type="button" class="btn btn-light" disabled>Product Sales:</button>
-      <button type="button" class="btn btn-outline-info">2011</button>
-      <button type="button" class="btn btn-outline-info">2012</button>
-      <button type="button" class="btn btn-outline-info">2013</button>
-    </div>
     <div class="card" style="height:25rem;width:30rem">
-        <ngx-charts-bar-vertical [results]="single">
+        <div class="btn-group" role="group" aria-label="Basic example">
+            <button type="button" class="btn btn-light" disabled>Product Sales:</button>
+            <button type="button" class="btn btn-outline-info">2011</button>
+            <button type="button" class="btn btn-outline-info">2012</button>
+            <button type="button" class="btn btn-outline-info">2013</button>
+          </div>
+        <ngx-charts-bar-vertical>
       </ngx-charts-bar-vertical>
     </div>
   </div>
@@ -75,7 +75,7 @@
     <div class="card" style="height:25rem;width:30rem">
       <div class="card-body">
         <h5 class="card-title">Pending Shipments</h5>
-
+        <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
       </div>
     </div>
   </div>

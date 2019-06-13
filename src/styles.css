@@ -2,6 +2,8 @@
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~jqwidgets-scripts/jqwidgets/styles/jqx.base.css";
 @import "~jqwidgets-scripts/jqwidgets/styles/jqx.bootstrap.css";
+@import '~@fullcalendar/core/main.css';
+@import '~@fullcalendar/daygrid/main.css';
 /* body{
   width: 100%;
   overflow-x:hidden;

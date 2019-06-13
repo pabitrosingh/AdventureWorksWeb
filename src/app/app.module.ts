@@ -36,6 +36,7 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { AssemblyLineComponent } from './assembly-line/assembly-line.component';
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 import { MaterialModule } from './material-module/material-module.module';
+import { FullCalendarModule } from '@fullcalendar/angular';
 
 @NgModule({
   declarations: [
@@ -76,7 +77,8 @@ import { MaterialModule } from './material-module/material-module.module';
     FormsModule,
     MaterialModule,
     NgbModule,
-    NgxChartsModule
+    NgxChartsModule,
+    FullCalendarModule
   ],
   providers: [DbrepositoryService],
   bootstrap: [AppComponent]

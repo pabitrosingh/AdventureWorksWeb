@@ -8,6 +8,7 @@ import {
 import { DbrepositoryService } from '../services/dbrepository.service';
 import { Chart } from 'chart.js';
 import { NgxChartsModule } from '@swimlane/ngx-charts';
+import dayGridPlugin from '@fullcalendar/daygrid';
 
 
 @Component({
@@ -16,6 +17,8 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
   styleUrls: ['./dashboard.component.css']
 })
 export class DashboardComponent {
+  
+  calendarPlugins = [dayGridPlugin];
   
   TerritoryPiGridChartDataSet: any[] = [
     {
@@ -53,6 +56,49 @@ export class DashboardComponent {
       }]
   }];
   
+  ProductSalesBarChartDataSet:any[] = [
+    {
+      "name": "Germany",
+      "series": [
+        {
+          "name": "2010",
+          "value": 7300000
+        },
+        {
+          "name": "2011",
+          "value": 8940000
+        }
+      ]
+    },
+  
+    {
+      "name": "USA",
+      "series": [
+        {
+          "name": "2010",
+          "value": 7870000
+        },
+        {
+          "name": "2011",
+          "value": 8270000
+        }
+      ]
+    },
+  
+    {
+      "name": "France",
+      "series": [
+        {
+          "name": "2010",
+          "value": 5000002
+        },
+        {
+          "name": "2011",
+          "value": 5800000
+        }
+      ]
+    }
+  ];
   constructor(private DB: DbrepositoryService) {
     // this.DB.GetCurrentYearTerritorySalesReportData()
     // .subscribe(resp => {
