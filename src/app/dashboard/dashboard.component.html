@@ -1,7 +1,31 @@
 <br />
 <div class="row">
-  <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
-    <div class="card" style="height:25rem;width:30rem">
+  <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card">
+      <br />
+      <div class="card-body">
+        <p class="card-title">Total Sales:<span class="text-info font-weight-bold">&nbsp;$8561</span></p>
+        <p>
+          <ngb-progressbar [showValue]="true" type="info" [value]="60"></ngb-progressbar>
+        </p>
+        <p>Target</p>
+      </div>
+    </div>
+  </div>
+  <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card">
+      <br />
+      <div class="card-body">
+        <p class="card-title">Customers:<span class="text-info font-weight-bold">&nbsp;2560</span></p>
+        <ngx-charts-line-chart [view]="[200,50]" [results]="CustomerLineChartDataset">
+        </ngx-charts-line-chart>
+        <span class="text-info float-left">2011</span>
+        <span class="text-info float-right">2014</span>
+      </div>
+    </div>
+  </div>
+  <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card">
       <br />
       <div class="card-body">
         <h5 class="card-title">Territory Sales</h5>
@@ -9,17 +33,39 @@
       </div>
     </div>
   </div>
+  <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
+    <div class="card">
+      <br />
+      <div class="card-body">
+        <h5 class="card-title">Territory Sales</h5>
+        <a href="#" class="btn btn-info">View Detail Report</a>
+      </div>
+    </div>
+  </div>
+</div>
+<br />
+
+<div class="row">
   <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
     <div class="card" style="height:25rem;width:30rem">
       <br />
-      <ngx-charts-bar-vertical-2d [view]="[350, 225]" [scheme]="BarChartColorScheme" [results]="BarChartDataSet"
-        [gradient]="false" [xAxis]="true" [yAxis]="true" [legend]='false' [showXAxisLabel]="true"
-        [showYAxisLabel]="true" xAxisLabel='Quater' yAxisLabel="Sales">
-      </ngx-charts-bar-vertical-2d>
+      <ngx-charts-pie-chart [view]="[350, 225]" [results]="TerritoryPiGridChartDataSet">
+      </ngx-charts-pie-chart>
       <div class="card-body">
-        <h5 class="card-title">Quaterly Products Sales</h5>
-        <a href="#" class="btn btn-info">View Detail Report</a>
+        <h5 class="card-title">Territory Sales</h5>
       </div>
+    </div>
+  </div>
+  <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12 align-self-center">
+    <div class="btn-group" role="group" aria-label="Basic example">
+      <button type="button" class="btn btn-light" disabled>Product Sales:</button>
+      <button type="button" class="btn btn-outline-info">2011</button>
+      <button type="button" class="btn btn-outline-info">2012</button>
+      <button type="button" class="btn btn-outline-info">2013</button>
+    </div>
+    <div class="card" style="height:25rem;width:30rem">
+        <ngx-charts-bar-vertical [results]="single">
+      </ngx-charts-bar-vertical>
     </div>
   </div>
 </div>
@@ -27,12 +73,9 @@
 <div class="row">
   <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12">
     <div class="card" style="height:25rem;width:30rem">
-      <br />
-      <ngx-charts-pie-grid [view]="[350, 225]" [results]="PiGridChartDataSet">
-      </ngx-charts-pie-grid>
       <div class="card-body">
-        <h5 class="card-title">Top Selling Products</h5>
-        <a href="#" class="btn btn-info">View Detail Report</a>
+        <h5 class="card-title">Pending Shipments</h5>
+
       </div>
     </div>
   </div>
@@ -66,3 +109,4 @@
     </div>
   </div>
 </div>
+<br /><br /><br /><br />

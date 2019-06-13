@@ -1,0 +1,9 @@
+.card{
+    box-shadow: 0 6px 14px 0 rgba(0,0,0,.06)
+}
+.card:hover{
+    border-bottom: 3px solid red;
+}
+.center-block{
+    float: none !important
+}
