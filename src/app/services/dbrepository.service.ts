@@ -9,34 +9,55 @@ import { IEmployee } from '../viewmodel/employee';
 @Injectable({
   providedIn: 'root'
 })
-export class DbrepositoryService {
-
+export class DBrepositoryService {
 
   private readonly BASE_URL = environment.API_ENDPOINT;
 
   constructor(private http: HttpClient) { }
 
-  public GetDepartmentsFromServer(): Observable<IDepartment[]> {
-    return this.http.get<IDepartment[]>(this.BASE_URL + `Department/GetDepartmentDetails`);
+  //*******Dashboard Services Start********//
+
+  public GetTotalSalesForTheYearFromServer(): Observable<number> {
+    return this.http.get<number>(this.BASE_URL + `Dashboard/GetTotalSalesForTheYear`);
   }
 
-  public GetDepartmentFromServer(deptid: Number): Observable<IDepartment> {
-    return this.http.get<IDepartment>(this.BASE_URL + `Department/GetDepartmentDetails/${deptid}`);
+  public GetTotalCustomerCountFromServer(): Observable<number> {
+    return this.http.get<number>(this.BASE_URL + `Dashboard/GetTotalCustomerCount`);
   }
+
+  GetTerritorySalesReportDataFromServer(): Observable<{ name: string,  value: number }[]>  {
+    return this.http.get<{ name: string,  value: number }[]>(
+      this.BASE_URL + `Dashboard/GetTerritorySalesReport`);
+  }
+
+  GetProductSalesReportDataFromServer(year:string): Observable<{ name: string,  value: number }[]>  {
+    return this.http.get<{ name: string,  value: number }[]>(
+      this.BASE_URL + `Dashboard/GetProductSalesReport/${year}`);
+  }
+
+  //*******Dashboard Services End********//
+
+  // public GetDepartmentsFromServer(): Observable<IDepartment[]> {
+  //   return this.http.get<IDepartment[]>(this.BASE_URL + `Department/GetDepartmentDetails`);
+  // }
+
+  // public GetDepartmentFromServer(deptid: Number): Observable<IDepartment> {
+  //   return this.http.get<IDepartment>(this.BASE_URL + `Department/GetDepartmentDetails/${deptid}`);
+  // }
 
   public GetEmployeeDetailsFromServer(empid: Number): Observable<IEmployee[]> {
     return this.http.get<IEmployee[]>(this.BASE_URL + `Employee/GetEmployeeDetails/${empid}`);
   }
 
-  public GetCurrentYearTerritorySalesReportDataFromServer(): Observable<{ Year: number, Name: string, Sales: number }[]> {
-    return this.http.get<{ Year: number, Name: string, Sales: number }[]>(
-      this.BASE_URL + `Sales/GetCurrentYearTerritorySalesReport`);
-  }
+  // public GetCurrentYearTerritorySalesReportDataFromServer(): Observable<{ Year: number, Name: string, Sales: number }[]> {
+  //   return this.http.get<{ Year: number, Name: string, Sales: number }[]>(
+  //     this.BASE_URL + `Sales/GetCurrentYearTerritorySalesReport`);
+  // }
 
-  public GetQuaterlyProductSalesDataDataFromServer(): Observable<{ Year: number, Quater: number, Name: string, Sales: number }[]> {
-    return this.http.get<{ Year: number, Quater: number, Name: string, Sales: number }[]>(
-      this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
-  }
+  // public GetQuaterlyProductSalesDataDataFromServer(): Observable<{ Year: number, Quater: number, Name: string, Sales: number }[]> {
+  //   return this.http.get<{ Year: number, Quater: number, Name: string, Sales: number }[]>(
+  //     this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
+  // }
 
   GetAssemblyLineDataFromServer(): Observable<{ LocationID: number, AssemblyName: string ,
                                                 CountWorkOrder: number , RoutingSequence: number }[]> {

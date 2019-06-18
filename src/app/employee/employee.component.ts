@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DbrepositoryService } from '../services/dbrepository.service';
+import { DBrepositoryService } from '../services/dbrepository.service';
 import { IEmployee } from '../viewmodel/employee';
 
 @Component({
@@ -12,7 +12,7 @@ export class EmployeeComponent {
    EmpList: Array<IEmployee> = [];
    IDTxtEmployeeIDSearch: Number;
 
-  constructor(private DB: DbrepositoryService) { }
+  constructor(private DB: DBrepositoryService) { }
 
   OnBtnSearchClick(empid: Number) {
     this.DB.GetEmployeeDetailsFromServer(empid)

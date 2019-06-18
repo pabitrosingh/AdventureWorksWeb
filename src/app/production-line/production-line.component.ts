@@ -1,5 +1,5 @@
 import { Component, OnInit, ViewEncapsulation } from '@angular/core';
-import { DbrepositoryService } from '../services/dbrepository.service';
+import { DBrepositoryService } from '../services/dbrepository.service';
 import { Router } from '@angular/router';
 
 @Component({
@@ -17,7 +17,7 @@ export class ProductionLineComponent implements OnInit {
   WorkOrderScrappedDataSet: any[];
   StockInventoryDataSet: any;
 
-  constructor(private DB: DbrepositoryService , private _Router: Router) {
+  constructor(private DB: DBrepositoryService , private _Router: Router) {
     this.GetAssemblyLineData();
     this.GetWorkOrderDetailsData();
     this.GetStockInventoryData();

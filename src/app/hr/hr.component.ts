@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { DbrepositoryService } from '../services/dbrepository.service';
+import { DBrepositoryService } from '../services/dbrepository.service';
 import { IDepartment } from '../viewmodel/department';
 
 @Component({
@@ -9,22 +9,22 @@ import { IDepartment } from '../viewmodel/department';
 })
 export class HrComponent implements OnInit {
 
-  constructor(private DB: DbrepositoryService) { }
+  constructor(private DB: DBrepositoryService) { }
 
   ngOnInit() {
 
   }
   public onBtnGteDepartmentClick() {
-    let DeptList: IDepartment[];
-    this.DB.GetDepartmentsFromServer()
-           .subscribe(resp => {
-              if (resp.length > 0) {
-               DeptList = resp;
-               console.log(DeptList);
-              }
-            },
-              error => {
-                console.log(error);
-              });
+    // let DeptList: IDepartment[];
+    // this.DB.GetDepartmentsFromServer()
+    //        .subscribe(resp => {
+    //           if (resp.length > 0) {
+    //            DeptList = resp;
+    //            console.log(DeptList);
+    //           }
+    //         },
+    //           error => {
+    //             console.log(error);
+    //           });
   }
 }

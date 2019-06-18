@@ -1,37 +1,50 @@
-import {
-  Component,
-  ViewChild,
-  ElementRef,
-  OnInit,
-  AfterViewInit
-} from '@angular/core';
-import { DbrepositoryService } from '../services/dbrepository.service';
-import { Chart } from 'chart.js';
-import { NgxChartsModule } from '@swimlane/ngx-charts';
+import { Component, AfterViewInit, OnInit } from '@angular/core';
+import { DBrepositoryService } from '../services/dbrepository.service';
 import dayGridPlugin from '@fullcalendar/daygrid';
-
 
 @Component({
   selector: 'app-dashboard',
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent {
-  
-  calendarPlugins = [dayGridPlugin];
-  
-  TerritoryPiGridChartDataSet: any[] = [
-    {
-      'name': 'Germany',
-      'value': 8940000
-    },
-    {
-      'name': 'USA',
-      'value': 5000000
-    }
-  ];
+export class DashboardComponent implements OnInit {
 
-  CustomerLineChartDataset:any = [{
+  calendarPlugins = [dayGridPlugin];
+  TerritoryPiGridChartDataSet: any[];
+  ProductSalesBarChartDataSet: any[];
+  TotalSalesForTheYear: string = "NA";
+  TotalCustomersCount: string = "NA";
+  IsBtn2014Clicked: boolean = false;
+  IsBtn2013Clicked: boolean = false;
+  IsBtn2012Clicked: boolean = false;
+  IsBtn2011Clicked: boolean = false;
+
+  InventoryGaugeChartDataSet = {
+    needleValue: 70,
+    bottomLabel: '70',
+    options: {
+      hasNeedle: true,
+      needleColor: 'gray',
+      needleUpdateSpeed: 1000,
+      arcColors: ['rgb(23, 162, 184)', 'lightgray'],
+      arcDelimiters: [70],
+      rangeLabel: ['0', '100'],
+      needleStartValue: 70,
+    }
+  };
+
+  PurchaseGaugeChartDataSet = {
+    needleValue: 30,
+    options: {
+      hasNeedle: true,
+      needleUpdateSpeed: 1000,
+      arcColors: ['rgb(23, 162, 184)', 'lightgray'],
+      arcDelimiters: [30],
+      rangeLabel: ['0', '100']
+    }
+  };
+
+  CustomerLineChartDataset: any = [{
     "name": "Total Customers",
     "series": [
       {
@@ -55,68 +68,133 @@ export class DashboardComponent {
         "name": "2015"
       }]
   }];
-  
-  ProductSalesBarChartDataSet:any[] = [
-    {
-      "name": "Germany",
-      "series": [
-        {
-          "name": "2010",
-          "value": 7300000
-        },
-        {
-          "name": "2011",
-          "value": 8940000
+
+
+  constructor(private DB: DBrepositoryService) { }
+
+  ngOnInit() {
+
+    //To Get Total Sales for the year 
+    this.DB.GetTotalSalesForTheYearFromServer()
+      .subscribe(resp => {
+        if (resp > 0) {
+          this.TotalSalesForTheYear = resp.toString();
         }
-      ]
-    },
-  
-    {
-      "name": "USA",
-      "series": [
-        {
-          "name": "2010",
-          "value": 7870000
-        },
-        {
-          "name": "2011",
-          "value": 8270000
+      },
+        error => {
+          console.log(error);
+        });
+
+
+    //To Get Total Customers Count
+    this.DB.GetTotalCustomerCountFromServer()
+      .subscribe(resp => {
+        if (resp > 0) {
+          this.TotalCustomersCount = resp.toString();
         }
-      ]
-    },
-  
-    {
-      "name": "France",
-      "series": [
-        {
-          "name": "2010",
-          "value": 5000002
-        },
-        {
-          "name": "2011",
-          "value": 5800000
+      },
+        error => {
+          console.log(error);
+        });
+
+    //To Get Territory Sales Report
+    this.DB.GetTerritorySalesReportDataFromServer()
+      .subscribe(resp => {
+        if (resp.length > 0) {
+          this.TerritoryPiGridChartDataSet = resp;
         }
-      ]
-    }
-  ];
-  constructor(private DB: DbrepositoryService) {
-    // this.DB.GetCurrentYearTerritorySalesReportData()
-    // .subscribe(resp => {
-    //   if (resp.length > 0) {
-    //     for (let index = 0; index < resp.length; index++) {
-    //       this.SalesTerritoryLlabels.push(resp[index].Name);
-    //       this.SalesTerritorydata.push(resp[index].Sales);
-    //     }
-    //   }
-    // },
-    //   error => {
-    //     console.log(error);
-    //   });
+      },
+        error => {
+          console.log(error);
+        });
+
+    //To Get Product Sales Report based on selected year
+    this.DB.GetProductSalesReportDataFromServer("2014")
+      .subscribe(resp => {
+        if (resp.length > 0) {
+          this.ProductSalesBarChartDataSet = resp;
+        }
+      },
+        error => {
+          console.log(error);
+        });
+
+  //trigger Btn2014 click by default
+    let eml: HTMLElement = document.getElementById('IDBtn2014') as HTMLElement;
+    eml.click();
+
   }
 
-  // ngAfterViewInit() {
-  //   this.Create_Doughnut_SalesTerritor_Chart();
-  // } 
+  ngAfterViewInit() {
+
+  }
+
+  BtnProductSalesCLick(year: number) {
+    switch (year) {
+      case 2014:
+        this.IsBtn2014Clicked = true;
+        this.IsBtn2013Clicked = false;
+        this.IsBtn2012Clicked = false;
+        this.IsBtn2011Clicked = false;
+        this.DB.GetProductSalesReportDataFromServer(year.toString())
+          .subscribe(resp => {
+            if (resp.length > 0) {
+              this.ProductSalesBarChartDataSet = resp;
+            }
+          },
+            error => {
+              console.log(error);
+            });
+        break;
+      case 2013:
+        this.IsBtn2014Clicked = false;
+        this.IsBtn2013Clicked = true;
+        this.IsBtn2012Clicked = false;
+        this.IsBtn2011Clicked = false;
+        this.DB.GetProductSalesReportDataFromServer(year.toString())
+          .subscribe(resp => {
+            if (resp.length > 0) {
+              this.ProductSalesBarChartDataSet = resp;
+            }
+          },
+            error => {
+              console.log(error);
+            });
+        break;
+      case 2012:
+        this.IsBtn2014Clicked = false;
+        this.IsBtn2013Clicked = false;
+        this.IsBtn2012Clicked = true;
+        this.IsBtn2011Clicked = false;
+        this.DB.GetProductSalesReportDataFromServer(year.toString())
+          .subscribe(resp => {
+            if (resp.length > 0) {
+              this.ProductSalesBarChartDataSet = resp;
+            }
+          },
+            error => {
+              console.log(error);
+            });
+        break;
+      case 2011:
+        this.IsBtn2014Clicked = false;
+        this.IsBtn2013Clicked = false;
+        this.IsBtn2012Clicked = false;
+        this.IsBtn2011Clicked = true;
+        this.DB.GetProductSalesReportDataFromServer(year.toString())
+          .subscribe(resp => {
+            if (resp.length > 0) {
+              this.ProductSalesBarChartDataSet = resp;
+            }
+          },
+            error => {
+              console.log(error);
+            });
+        break;
+      default:
+        break;
+    }
+  }
 }
 
 
