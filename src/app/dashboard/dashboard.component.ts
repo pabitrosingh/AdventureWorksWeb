@@ -7,9 +7,10 @@ import dayGridPlugin from '@fullcalendar/daygrid';
   templateUrl: './dashboard.component.html',
   styleUrls: ['./dashboard.component.css']
 })
-export class DashboardComponent implements OnInit {
+export class DashboardComponent implements OnInit, AfterViewInit {
 
   calendarPlugins = [dayGridPlugin];
+  PendingShipmentDataSet: any[]=[ { title: 'event 1', date: new Date()}];
   TerritoryPiGridChartDataSet: any[];
   ProductSalesBarChartDataSet: any[];
   TotalSalesForTheYear: string = "NA";
@@ -68,7 +69,6 @@ export class DashboardComponent implements OnInit {
         "name": "2015"
       }]
   }];
-
 
   constructor(private DB: DBrepositoryService) { }
 
@@ -129,6 +129,7 @@ export class DashboardComponent implements OnInit {
 
   }
 
+  //Product Sales Year Btn Click
   BtnProductSalesCLick(year: number) {
     switch (year) {
       case 2014:

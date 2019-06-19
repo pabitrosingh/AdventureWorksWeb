@@ -54,10 +54,12 @@
     <div class="card" style="height:25rem;width:30rem">
       <div class="card-body">
         <h5 class="card-title">Territory Sales for 2014</h5>
+        <p *ngIf="TerritoryPiGridChartDataSet?.length<=0">There is some problem in loading data</p>
         <ngx-charts-pie-chart [view]="[375, 350]" [results]="TerritoryPiGridChartDataSet" [animations]="true"
           [labels]="true" [doughnut]="false" [legend]="false">
         </ngx-charts-pie-chart>
       </div>
+      
     </div>
   </div>
   <div class="col-lx-6 col-lg-6 col-md-12 col-sm-12 col-12 align-self-center">
@@ -70,6 +72,7 @@
         <button id="IDBtn2014" type="button" class="btn btn-outline-info" [ngClass]="{'active': IsBtn2014Clicked}" (click)="BtnProductSalesCLick(2014)">2014</button>
       </div>
       <div class="card-body">
+          <p *ngIf="ProductSalesBarChartDataSet?.length<=0">There is some problem in loading data</p>
         <ngx-charts-bar-vertical [view]="[375,350]" [results]="ProductSalesBarChartDataSet" [xAxis]="true"
           [yAxis]="true" [showXAxisLabel]="true" [showYAxisLabel]="true" [xAxisLabel]="Year" [yAxisLabel]="Sales">
         </ngx-charts-bar-vertical>
@@ -85,7 +88,7 @@
         <h5 class="card-title">Pending Shipments</h5>
       </div>
       <div class="card-body">
-        <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins"></full-calendar>
+        <full-calendar defaultView="dayGridMonth" [plugins]="calendarPlugins" [events]="PendingShipmentDataSet"></full-calendar>
       </div>
     </div>
   </div>
