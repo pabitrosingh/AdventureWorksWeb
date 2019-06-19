@@ -1,33 +1,35 @@
-# AdventureWorksWeb
-
+# Adventure Works Web
+Adventure Works Web App is an Angular Based Web Application to visualize the Adventure Works Databse.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
-## Development server
+## Framework & Technologies used
+* [Angular](https://angular.io/)
+* [Nodejs](https://nodejs.org/en/)
+* [TypeScript](http://www.typescriptlang.org/index.html)
+* [Angular Material](https://material.angular.io/) 
+* [Bootstrap-4](https://getbootstrap.com/) 
+* [ng-Bootstrap](https://ng-bootstrap.github.io/#/home) 
+* [NGX-CHARTS](https://swimlane.github.io/ngx-charts/#/ngx-charts/bar-vertical) 
+* [FullCalender](https://fullcalendar.io/) 
+* [Icons](https://useiconic.com/open/)
+* [jQWidgets](https://www.jqwidgets.com/angular/)
+* [jQWidgets](https://www.jqwidgets.com/angular/)
+* [DataTables](https://datatables.net/)
+* [Adventure Works Databse Structure](http://elsasoft.com/samples/sqlserver_adventureworks/SqlServer.SPRING.KATMAI.AdventureWorks/default.htm)
+* [Sample Adventure Works DB](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017)
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+## Getting Started
+To run the app you mast have the bellow set up 
+* SQL Server 2014 with Adventure Works Database 
+* Angular CLI 
+* Node JS
+* [Dotnet Core](https://dotnet.microsoft.com/download)
+* AdventureWorksAPI Web API Project 
 
-## Code scaffolding
-
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
-
-## Build
-
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory. Use the `--prod` flag for a production build.
-
-## Running unit tests
-
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
-
-## Running end-to-end tests
-
-Run `ng e2e` to execute the end-to-end tests via [Protractor](http://www.protractortest.org/).
-
-## Further help
-
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI README](https://github.com/angular/angular-cli/blob/master/README.md).
+Run `dotnet run` for a dotnet core Web API dev server. Navigate to `http://localhost:5050/`. 
+Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 
 
-##ICons Used from 
 
-https://useiconic.com/open/
-
+## License
+[MIT](https://choosealicense.com/licenses/mit/)
