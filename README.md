@@ -28,10 +28,15 @@ To run the app you mast have the bellow set up
 
 `````
 Run `dotnet run` for a dotnet core Web API dev server. Navigate to `http://localhost:5050/`. 
-`````
-`````
+
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
 `````
+
+## Sample Screens
+![Dashboard Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-1.PNG)
+![Production Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-2.PNG)
+![HR Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-3.PNG)
+
 
 
 
