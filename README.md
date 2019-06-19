@@ -26,8 +26,12 @@ To run the app you mast have the bellow set up
 * [Dotnet Core](https://dotnet.microsoft.com/download)
 * AdventureWorksAPI Web API Project 
 
+`````
 Run `dotnet run` for a dotnet core Web API dev server. Navigate to `http://localhost:5050/`. 
+`````
+`````
 Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
+`````
 
 
 
