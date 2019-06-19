@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewEncapsulation } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { DBrepositoryService } from '../services/dbrepository.service';
 import { Router } from '@angular/router';
 
@@ -9,7 +9,6 @@ import { Router } from '@angular/router';
 })
 export class ProductionLineComponent implements OnInit {
 
-
   AssemblyLineDataSet: Array<{ LocationID: number, AssemblyName: string, CountWorkOrder: number, RoutingSequence: number }> = [];
   WorkOrderReceivedDataSet: any[];
   WorkOrderCompletedDataSet: any[];
@@ -17,12 +16,12 @@ export class ProductionLineComponent implements OnInit {
   WorkOrderScrappedDataSet: any[];
   StockInventoryDataSet: any;
 
-  constructor(private DB: DBrepositoryService , private _Router: Router) {
+  constructor(private DB: DBrepositoryService , private _Router: Router) {}
+
+  ngOnInit() {
     this.GetAssemblyLineData();
     this.GetWorkOrderDetailsData();
     this.GetStockInventoryData();
-  }
-  ngOnInit() {
   }
 
   GetAssemblyLineData() {
