@@ -81,7 +81,7 @@ import { GaugeChartModule } from 'angular-gauge-chart'
     NgbModule,
     NgxChartsModule,
     FullCalendarModule,
-    GaugeChartModule 
+    GaugeChartModule
   ],
   providers: [DBrepositoryService],
   bootstrap: [AppComponent]

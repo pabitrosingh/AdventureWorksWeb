@@ -1,11 +1,10 @@
 export interface IAssemblyLine {
   WorkOrderID: number;
-  Name: string;
+  ProductName: string;
   OrderQty: number;
   CurrentStage: string;
   AssemblyArea: string;
   ActualResourceHrs: number;
-  PlannedCost: number;
   ActualCost: number;
   StartDate: string;
   EndDate: string;

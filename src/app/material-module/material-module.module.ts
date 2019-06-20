@@ -1,11 +1,10 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { MatTreeModule} from '@angular/material';
+import { MatTreeModule, MatInputModule, MatSelectModule} from '@angular/material';
 
 
 @NgModule({
-  
   imports: [
     CommonModule
   ],
@@ -14,8 +13,9 @@ import { MatTreeModule} from '@angular/material';
   exports:[
     MatTreeModule,
     CommonModule,
-    FormsModule
+    FormsModule,
+    MatInputModule,
+    MatSelectModule
   ],
-  
 })
 export class MaterialModule { }

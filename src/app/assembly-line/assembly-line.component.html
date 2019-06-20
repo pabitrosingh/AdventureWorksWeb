@@ -1,3 +1,14 @@
-<p>
-  assembly-line works!
-</p>
+<br />
+<div class="row">
+  <div class="col-lx-12 col-lg-12 col-md-12 col-sm-12 col-12">
+    <div class="card">
+      <div class="card-header">
+        <h3>{{ AssemblyName }}</h3>
+      </div>
+      <jqxGrid [width]="1050" [source]="AssemblyLineGridDataAdapter" [columns]="AssemblyLineGridColumns"
+        [pageable]="true" [autoheight]="true" [sortable]="true" [altrows]="true" [enabletooltips]="true">
+      </jqxGrid>
+    </div>
+  </div>
+</div>
+<br /><br /><br /><br />
