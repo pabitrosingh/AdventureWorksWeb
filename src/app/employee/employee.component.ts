@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DBrepositoryService } from '../services/dbrepository.service';
-import { IEmployee } from '../viewmodel/employee';
+import { IEmployee } from '../viewmodel/IEmployee';
 
 @Component({
   selector: 'app-employee',

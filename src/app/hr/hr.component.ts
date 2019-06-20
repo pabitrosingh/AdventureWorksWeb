@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { DBrepositoryService } from '../services/dbrepository.service';
-import { IDepartment } from '../viewmodel/department';
+import { IDepartment } from '../viewmodel/IDepartment';
 
 @Component({
   selector: 'app-hr',

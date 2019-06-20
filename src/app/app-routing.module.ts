@@ -53,10 +53,10 @@ const routes: Routes = [
         path: 'assemblyline',
         component: AssemblyLineComponent
       },
-      // {
-      //   path: 'assemblyline/:locationid',
-      //   component: AssemblyLineComponent
-      // },
+      {
+        path: 'assemblyline/:LocationID',
+        component: AssemblyLineComponent
+      },
       { path: '', redirectTo: 'productionline', pathMatch: 'full' }
     ]
   },

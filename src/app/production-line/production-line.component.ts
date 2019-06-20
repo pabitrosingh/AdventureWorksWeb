@@ -51,11 +51,10 @@ export class ProductionLineComponent implements OnInit {
         this.StockInventoryDataSet = resp;
       }
     });
-    console.log(this.StockInventoryDataSet);
   }
-  public ViewSelectedAssemblyLineDetails(LocationID: number): void {
+
+  AssemblyLineNameClick(LocationID: number): void {
     alert(LocationID);
     this._Router.navigate(['/production/assemblyline', { LocationID: LocationID}]);
   }
-
 }
