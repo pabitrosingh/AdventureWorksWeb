@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { DBrepositoryService } from '../services/dbrepository.service';
+import { environment } from '../../environments/environment';
 
 @Component({
   selector: 'app-assembly-line',
@@ -12,6 +13,7 @@ export class AssemblyLineComponent implements OnInit {
   AssemblyName: string;
   AssemblyLineGridColumns: any[] = [];
   AssemblyLineGridDataAdapter: any;
+  private readonly BASE_URL = environment.API_ENDPOINT;
 
   constructor(private _ActivatedRoute: ActivatedRoute, private DB: DBrepositoryService) { }
   ngOnInit() {
@@ -28,15 +30,15 @@ export class AssemblyLineComponent implements OnInit {
   CreateAssemblyLineGrid(): void {
     this.AssemblyLineGridColumns =
       [
-        { text: 'Work Order ID', dataField: 'WorkOrderID', width: 120 },
+        { text: 'Work Order ID', dataField: 'WorkOrderID', width: 100, cellsalign: 'center' },
         { text: 'Product Name', dataField: 'ProductName', width: 200 },
-        { text: 'Order Qty', dataField: 'OrderQty', width: 85 },
+        { text: 'Order Qty', dataField: 'OrderQty', width: 85, cellsalign: 'center' },
         { text: 'Current Stage', dataField: 'CurrentStage', width: 120 },
         { text: 'Assembly Area', dataField: 'AssemblyArea', width: 120 },
-        { text: 'Resource Hrs', dataField: 'ActualResourceHrs', width: 110 },
-        { text: 'Actual Cost', dataField: 'ActualCost', width: 100 },
-        { text: 'Start Date', dataField: 'StartDate', width: 100 },
-        { text: 'End Date', dataField: 'EndDate', width: 100 }
+        { text: 'Resource Hrs', dataField: 'ActualResourceHrs', width: 110, cellsalign: 'center' },
+        { text: 'Actual Cost', dataField: 'ActualCost', width: 100, cellsalign: 'center' },
+        { text: 'Start Date', dataField: 'StartDate', width: 100, cellsalign: 'center' },
+        { text: 'End Date', dataField: 'EndDate', width: 100, cellsalign: 'center' }
       ];
 
     const GridConfig: any = {
@@ -52,10 +54,26 @@ export class AssemblyLineComponent implements OnInit {
         { name: 'StartDate', type: 'string' },
         { name: 'EndDate', type: 'string' },
       ],
+      sortcolumn: 'WorkOrderID',
+      sortdirection: 'asc',
       id: 'WorkOrderID',
-      url: 'http://localhost:5050/api/Production/GetAssemblyLineRecords/' + this.LocationID,
-      root: 'data'
+      pagesize: 5,
+      totalrecords: 'totalrecords',
+      root: 'root',
+      cache: false,
+      url: this.BASE_URL + 'Production/GetAssemblyLineRecords/' + this.LocationID,
+      beforeprocessing: function (data) {
+        GridConfig.totalrecords  = data.totalrecords ;
+      }
     };
-    this.AssemblyLineGridDataAdapter = new jqx.dataAdapter(GridConfig);
+
+    this.AssemblyLineGridDataAdapter = new jqx.dataAdapter(GridConfig, {
+      loadError: function (xhr, status, error) {
+      console.log(error);
+      }
+  });
+  }
+  AssemblyLineGridRenderGridRows(obj) {
+    return obj.data;
   }
 }

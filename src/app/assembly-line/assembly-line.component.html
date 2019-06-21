@@ -5,8 +5,18 @@
       <div class="card-header">
         <h3>{{ AssemblyName }}</h3>
       </div>
-      <jqxGrid [width]="1050" [source]="AssemblyLineGridDataAdapter" [columns]="AssemblyLineGridColumns"
-        [pageable]="true" [autoheight]="true" [sortable]="true" [altrows]="true" [enabletooltips]="true">
+      <jqxGrid
+        [width]="1050"
+        [theme]="'office'"
+        [source]="AssemblyLineGridDataAdapter"
+        [columns]="AssemblyLineGridColumns"
+        [pageable]="true"
+        [filterable]="true"
+        [autoheight]="true"
+        [sortable]="true"
+        [virtualmode]="true"
+        [rendergridrows]="AssemblyLineGridRenderGridRows"
+        [enabletooltips]="true">
       </jqxGrid>
     </div>
   </div>

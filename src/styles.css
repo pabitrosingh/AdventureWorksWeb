@@ -1,9 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
 @import "~bootstrap/dist/css/bootstrap.css";
 @import "~jqwidgets-scripts/jqwidgets/styles/jqx.base.css";
-@import "~jqwidgets-scripts/jqwidgets/styles/jqx.bootstrap.css";
-@import '~@fullcalendar/core/main.css';
-@import '~@fullcalendar/daygrid/main.css';
+@import "~jqwidgets-scripts/jqwidgets/styles/jqx.office.css";
+@import "~@fullcalendar/core/main.css";
+@import "~@fullcalendar/daygrid/main.css";
+@import "~@angular/material/prebuilt-themes/pink-bluegrey.css";
+
+
 /* body{
   width: 100%;
   overflow-x:hidden;

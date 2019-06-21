@@ -54,7 +54,6 @@ export class ProductionLineComponent implements OnInit {
   }
 
   AssemblyLineNameClick(LocationID: number, AssemblyName: string): void {
-    alert(LocationID);
     this._Router.navigate(['/production/assemblyline', { LocationID: LocationID , AssemblyName: AssemblyName}]);
   }
 }
