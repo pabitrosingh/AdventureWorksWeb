@@ -37,7 +37,9 @@ import { NgxChartsModule } from '@swimlane/ngx-charts';
 import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid';
 import { MaterialModule } from './material-module/material-module.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
-import { GaugeChartModule } from 'angular-gauge-chart'
+import { GaugeChartModule } from 'angular-gauge-chart';
+import { AgGridModule } from 'ag-grid-angular';
+
 
 
 @NgModule({
@@ -81,7 +83,8 @@ import { GaugeChartModule } from 'angular-gauge-chart'
     NgbModule,
     NgxChartsModule,
     FullCalendarModule,
-    GaugeChartModule
+    GaugeChartModule,
+    AgGridModule.withComponents([])
   ],
   providers: [DBrepositoryService],
   bootstrap: [AppComponent]

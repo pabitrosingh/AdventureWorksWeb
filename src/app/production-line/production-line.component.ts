@@ -56,4 +56,9 @@ export class ProductionLineComponent implements OnInit {
   AssemblyLineNameClick(LocationID: number, AssemblyName: string): void {
     this._Router.navigate(['/production/assemblyline', { LocationID: LocationID , AssemblyName: AssemblyName}]);
   }
+
+  WorkOrderBtnClick(WorkOrderType: string): void {
+    alert(WorkOrderType);
+    this._Router.navigate(['/production/workorder', { WorkOrderType: WorkOrderType }]);
+  }
 }

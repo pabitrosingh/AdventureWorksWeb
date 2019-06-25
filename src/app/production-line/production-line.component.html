@@ -24,7 +24,9 @@
               bandColor='#b52d30'>
             </ngx-charts-number-card>
           </li>
-          <li class="list-group-item"><a href="/production/workorder" class="btn btn-info">Oder Routing</a></li>
+          <li class="list-group-item">
+            <button class="btn btn-info" (click)="WorkOrderBtnClick('Received')">Oder Routing</button>
+          </li>
         </ul>
       </div>
       <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
@@ -35,7 +37,9 @@
               bandColor='#b52d30'>
             </ngx-charts-number-card>
           </li>
-          <li class="list-group-item"> <a href="#" class="btn btn-info">Start Shipping</a></li>
+          <li class="list-group-item">
+            <button class="btn btn-info" (click)="WorkOrderBtnClick('Completed')">Start Shipping</button>
+          </li>
         </ul>
       </div>
       <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
@@ -46,7 +50,9 @@
               bandColor='#b52d30'>
             </ngx-charts-number-card>
           </li>
-          <li class="list-group-item"> <a href="#" class="btn btn-info">View Reasons</a></li>
+          <li class="list-group-item">
+             <button class="btn btn-info" (click)="WorkOrderBtnClick('Delayed')">View Reasons</button>
+            </li>
         </ul>
       </div>
       <div class="col-lx-3 col-lg-3 col-md-6 col-sm-12 col-12">
@@ -57,7 +63,9 @@
               bandColor='#b52d30'>
             </ngx-charts-number-card>
           </li>
-          <li class="list-group-item"> <a href="#" class="btn btn-info">View Reasons</a></li>
+          <li class="list-group-item">
+            <button class="btn btn-info" (click)="WorkOrderBtnClick('Scraped')">View Reasons</button>
+          </li>
         </ul>
       </div>
     </div>
