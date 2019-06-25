@@ -1,22 +1,14 @@
 <br />
 <div class="row">
   <div class="col-lx-12 col-lg-12 col-md-12 col-sm-12 col-12">
-    <div class="card">
+    <ngb-alert [dismissible]="false" *ngIf="!LocationID">
+      <strong>Assembly Line not Selected..!!</strong>
+    </ngb-alert>
+    <div class="card" *ngIf="LocationID">
       <div class="card-header">
         <h3>{{ AssemblyName }}</h3>
       </div>
-      <jqxGrid
-        [width]="1050"
-        [theme]="'office'"
-        [source]="AssemblyLineGridDataAdapter"
-        [columns]="AssemblyLineGridColumns"
-        [pageable]="true"
-        [filterable]="true"
-        [autoheight]="true"
-        [sortable]="true"
-        [virtualmode]="true"
-        [rendergridrows]="AssemblyLineGridRenderGridRows"
-        [enabletooltips]="true">
+      <jqxGrid #IDAssemblyLineGrid [auto-create]='false'>
       </jqxGrid>
     </div>
   </div>
