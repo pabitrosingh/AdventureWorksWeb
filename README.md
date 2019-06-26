@@ -1,16 +1,10 @@
 # Adventure Works Web
-<<<<<<< HEAD
 
-=======
->>>>>>> 8039da1b0582a1dc92fefd62077f84a79087fcbd
 Adventure Works Web App is an Angular Based Web Application to visualize the Adventure Works Databse.
 This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 7.0.2.
 
 ## Framework & Technologies used
-<<<<<<< HEAD
 
-=======
->>>>>>> 8039da1b0582a1dc92fefd62077f84a79087fcbd
 * [Angular](https://angular.io/)
 * [Nodejs](https://nodejs.org/en/)
 * [TypeScript](http://www.typescriptlang.org/index.html)
@@ -21,16 +15,13 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * [FullCalender](https://fullcalendar.io/) 
 * [Icons](https://useiconic.com/open/)
 * [jQWidgets](https://www.jqwidgets.com/angular/)
-<<<<<<< HEAD
 * [jQWidgets](https://www.jqwidgets.com/angular/)
-=======
->>>>>>> 8039da1b0582a1dc92fefd62077f84a79087fcbd
+
 * [DataTables](https://datatables.net/)
 * [Adventure Works Databse Structure](http://elsasoft.com/samples/sqlserver_adventureworks/SqlServer.SPRING.KATMAI.AdventureWorks/default.htm)
 * [Sample Adventure Works DB](https://docs.microsoft.com/en-us/sql/samples/adventureworks-install-configure?view=sql-server-2017)
 
 ## Getting Started
-<<<<<<< HEAD
 
 To run the app you mast have the bellow set up
 *SQL Server 2014 with Adventure Works Database
@@ -49,28 +40,3 @@ Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`.
 ![Dashboard Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-1.PNG)
 ![Production Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-2.PNG)
 ![HR Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-3.PNG)
-=======
-To run the app you mast have the bellow set up 
-* SQL Server 2014 with Adventure Works Database 
-* Angular CLI 
-* Node JS
-* [Dotnet Core](https://dotnet.microsoft.com/download)
-* AdventureWorksAPI Web API Project 
-
-`````
-Run `dotnet run` for a dotnet core Web API dev server. Navigate to `http://localhost:5050/`. 
-
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. 
-`````
-
-## Sample Screens
-![Dashboard Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-1.PNG)
-![Production Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-2.PNG)
-![HR Screen](https://raw.githubusercontent.com/pabitrosingh/AdventureWorksWeb/master/Screen-3.PNG)
-
-
-
-
-
-
->>>>>>> 8039da1b0582a1dc92fefd62077f84a79087fcbd
