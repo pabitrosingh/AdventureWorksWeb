@@ -58,7 +58,6 @@ export class ProductionLineComponent implements OnInit {
   }
 
   WorkOrderBtnClick(WorkOrderType: string): void {
-    alert(WorkOrderType);
     this._Router.navigate(['/production/workorder', { WorkOrderType: WorkOrderType }]);
   }
 }
