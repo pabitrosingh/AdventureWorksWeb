@@ -38,7 +38,6 @@ import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid
 import { MaterialModule } from './material-module/material-module.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { GaugeChartModule } from 'angular-gauge-chart';
-import { AgGridModule } from 'ag-grid-angular';
 
 
 
@@ -83,8 +82,7 @@ import { AgGridModule } from 'ag-grid-angular';
     NgbModule,
     NgxChartsModule,
     FullCalendarModule,
-    GaugeChartModule,
-    AgGridModule.withComponents([])
+    GaugeChartModule
   ],
   providers: [DBrepositoryService],
   bootstrap: [AppComponent]

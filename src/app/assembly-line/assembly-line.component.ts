@@ -15,7 +15,7 @@ export class AssemblyLineComponent implements OnInit , AfterViewInit {
   AssemblyLineGridColumns: any[] = [];
   AssemblyLineGridDataAdapter: any;
   private readonly BASE_URL = environment.API_ENDPOINT;
-  @ViewChild('IDAssemblyLineGrid') IDAssemblyLineGrid: jqxGridComponent;
+  @ViewChild('IDAssemblyLineGrid', { static: true}) IDAssemblyLineGrid: jqxGridComponent;
   AssemblyLineGridSource: jqwidgets.GridSource;
   AssemblyLineGridOptions: jqwidgets.GridOptions;
 

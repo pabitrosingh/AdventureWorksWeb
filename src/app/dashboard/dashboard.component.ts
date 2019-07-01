@@ -10,7 +10,7 @@ import dayGridPlugin from '@fullcalendar/daygrid';
 export class DashboardComponent implements OnInit, AfterViewInit {
 
   calendarPlugins = [dayGridPlugin];
-  PendingShipmentDataSet: any[]=[ { title: 'event 1', date: new Date()}];
+  PendingShipmentDataSet: any[] = [ { title: 'event 1', date: new Date()}];
   TerritoryPiGridChartDataSet: any[];
   ProductSalesBarChartDataSet: any[];
   TotalSalesForTheYear: string = "NA";
@@ -46,27 +46,27 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   };
 
   CustomerLineChartDataset: any = [{
-    "name": "Total Customers",
-    "series": [
+    'name': 'Total Customers',
+    'series': [
       {
-        "value": 20,
-        "name": "2011"
+        'value': 20,
+        'name': '2011'
       },
       {
-        "value": 50,
-        "name": "2012"
+        'value': 50,
+        'name': '2012'
       },
       {
-        "value": 100,
-        "name": "2013"
+        'value': 100,
+        'name': '2013'
       },
       {
-        "value": 200,
-        "name": "2014"
+        'value': 200,
+        'name': '2014'
       },
       {
-        "value": 250,
-        "name": "2015"
+        'value': 250,
+        'name': '2015'
       }]
   }];
 
@@ -74,7 +74,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   ngOnInit() {
 
-    //To Get Total Sales for the year 
+    // To Get Total Sales for the year
     this.DB.GetTotalSalesForTheYearFromServer()
       .subscribe(resp => {
         if (resp > 0) {
@@ -86,7 +86,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
         });
 
 
-    //To Get Total Customers Count
+    // To Get Total Customers Count
     this.DB.GetTotalCustomerCountFromServer()
       .subscribe(resp => {
         if (resp > 0) {
@@ -97,7 +97,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
           console.log(error);
         });
 
-    //To Get Territory Sales Report
+    // To Get Territory Sales Report
     this.DB.GetTerritorySalesReportDataFromServer()
       .subscribe(resp => {
         if (resp.length > 0) {
@@ -108,8 +108,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
           console.log(error);
         });
 
-    //To Get Product Sales Report based on selected year
-    this.DB.GetProductSalesReportDataFromServer("2014")
+    // To Get Product Sales Report based on selected year
+    this.DB.GetProductSalesReportDataFromServer('2014')
       .subscribe(resp => {
         if (resp.length > 0) {
           this.ProductSalesBarChartDataSet = resp;
@@ -119,8 +119,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
           console.log(error);
         });
 
-  //trigger Btn2014 click by default
-    let eml: HTMLElement = document.getElementById('IDBtn2014') as HTMLElement;
+  // trigger Btn2014 click by default
+    const eml: HTMLElement = document.getElementById('IDBtn2014') as HTMLElement;
     eml.click();
 
   }
@@ -129,7 +129,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
 
   }
 
-  //Product Sales Year Btn Click
+  // Product Sales Year Btn Click
   BtnProductSalesCLick(year: number) {
     switch (year) {
       case 2014:
