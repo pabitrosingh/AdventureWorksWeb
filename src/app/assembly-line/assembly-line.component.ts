@@ -12,10 +12,8 @@ import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid
 export class AssemblyLineComponent implements OnInit , AfterViewInit {
   LocationID: string;
   AssemblyName: string;
-  AssemblyLineGridColumns: any[] = [];
-  AssemblyLineGridDataAdapter: any;
   private readonly BASE_URL = environment.API_ENDPOINT;
-  @ViewChild('IDAssemblyLineGrid', { static: true}) IDAssemblyLineGrid: jqxGridComponent;
+  @ViewChild('IDAssemblyLineGrid', { static: false}) IDAssemblyLineGrid: jqxGridComponent;
   AssemblyLineGridSource: jqwidgets.GridSource;
   AssemblyLineGridOptions: jqwidgets.GridOptions;
 
