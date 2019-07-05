@@ -32,7 +32,7 @@ export class AssemblyLineComponent implements OnInit , AfterViewInit {
       sortcolumn: 'WorkOrderID',
       sortdirection: 'asc',
       id: 'WorkOrderID',
-      pagesize: 5,
+      pagesize: 15,
       // root: 'root',
       datafields: [
         { name: 'WorkOrderID', type: 'int' },
@@ -51,6 +51,7 @@ export class AssemblyLineComponent implements OnInit , AfterViewInit {
 
     this.AssemblyLineGridOptions  = {
       width: 1050,
+      pagesizeoptions: ['5', '10', '15'],
       theme: 'office',
       pageable: true,
       sortable: true,

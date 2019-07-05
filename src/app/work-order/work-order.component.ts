@@ -34,7 +34,7 @@ export class WorkOrderComponent implements OnInit, AfterViewInit {
         sortcolumn: 'WorkOrderID',
         sortdirection: 'asc',
         id: 'WorkOrderID',
-        pagesize: 5,
+        pagesize: 15,
         // root: 'root',
         datafields: [
           { name: 'WorkOrderID', type: 'int' },
@@ -50,6 +50,7 @@ export class WorkOrderComponent implements OnInit, AfterViewInit {
       };
       this.WorkOrderDetailsGridOptions = {
         width: 1050,
+        pagesizeoptions: ['5', '10', '15'],
         theme: 'office',
         pageable: true,
         sortable: true,
@@ -83,7 +84,7 @@ export class WorkOrderComponent implements OnInit, AfterViewInit {
         sortcolumn: 'WorkOrderID',
         sortdirection: 'asc',
         id: 'WorkOrderID',
-        pagesize: 5,
+        pagesize: 15,
         // root: 'root',
         datafields: [
           { name: 'WorkOrderID', type: 'int' },
@@ -98,6 +99,7 @@ export class WorkOrderComponent implements OnInit, AfterViewInit {
       };
       this.WorkOrderDetailsGridOptions = {
         width: 1050,
+        pagesizeoptions: ['5', '10', '15'],
         theme: 'office',
         pageable: true,
         sortable: true,

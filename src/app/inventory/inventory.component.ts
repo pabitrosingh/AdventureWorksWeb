@@ -29,7 +29,7 @@ export class InventoryComponent implements OnInit , AfterViewInit {
       sortcolumn: 'ProductID',
       sortdirection: 'asc',
       id: 'ProductID',
-      pagesize: 5,
+      pagesize: 15,
       // root: 'root',
       datafields: [
         { name: 'ProductID', type: 'int' },
@@ -42,6 +42,7 @@ export class InventoryComponent implements OnInit , AfterViewInit {
     };
     this.ProductInventoryGridOptions = {
       width: 1050,
+      pagesizeoptions: ['5', '10', '15'],
       theme: 'office',
       pageable: true,
       sortable: true,
