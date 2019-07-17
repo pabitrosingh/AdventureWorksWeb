@@ -1,18 +1,37 @@
 <div class="row mt-2">
-    <div class="col-lx-10 col-lg-10 col-md-10 col-sm-10 col-10">
-        <div class="input-group">
-            <div class="input-group-prepend">
-                <span class="input-group-text">Products</span>
-            </div>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
-            <div class="input-group-append">
-                <button class="btn btn-outline-info">
-                    <img src="/assets/icons/svg/magnifying-glass.svg" alt="Search" height="20px;">
-                    &nbsp;Search
-                </button>
-            </div>
-        </div>
+  <div class="col-lx-10 col-lg-10 col-md-10 col-sm-10 col-10">
+    <div class="input-group">
+      <div class="input-group-prepend">
+        <span class="input-group-text">Products</span>
+      </div>
+      <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)">
+      <div class="input-group-append">
+        <button class="btn btn-outline-info">
+          <img src="/assets/icons/svg/magnifying-glass.svg" alt="Search" height="20px;">
+          &nbsp;Search
+        </button>
+      </div>
     </div>
+  </div>
 </div>
-
-
+<div class="row mt-2" style="margin-left: 1px;">
+  <div *ngFor="let item of ProductDetails">
+    <div class="card card-hover" style="width: 18rem;margin: 2px;">
+      <img src="{{BASE_URL}}Sales/GetImage/{{item.ProductID}}" class="card-img-top" alt="{{ item.ProductNumber}}">
+      <div class="card-body">
+        <h5 class="card-title">{{item.Name}}</h5>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">MRP:{{item.ListPrice}}</li>
+          <li class="list-group-item" *ngIf="item.Color!=null">Color:{{item.Color}}</li>
+          <li class="list-group-item" *ngIf="item.Style!=null">Style:{{item.Style}}</li>
+          <li class="list-group-item" *ngIf="item.Class!=null">Class:{{item.Class}}</li>
+          <li class="list-group-item" *ngIf="item.Weight!=null">Weight:{{item.Weight}} {{item.WeightUnitMeasureCode}}</li>
+          <li class="list-group-item" *ngIf="item.Size!=null">Size:{{item.Size}} {{item.SizeUnitMeasureCode}}</li>
+        </ul>
+        <p class="card-text">{{item.Description}}</p>
+        <button class="btn btn-outline-info">Add to cart</button>
+      </div>
+    </div>
+  </div>
+</div>
+<br/><br/><br/><br/>

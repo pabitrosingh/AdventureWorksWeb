@@ -13,14 +13,14 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   PendingShipmentDataSet: any[] = [ { title: 'event 1', date: new Date()}];
   TerritoryPiGridChartDataSet: any[];
   ProductSalesBarChartDataSet: any[];
-  TotalSalesForTheYear: string = "NA";
-  TotalCustomersCount: string = "NA";
+  TotalSalesForTheYear: string = 'NA';
+  TotalCustomersCount: string = 'NA';
   IsBtn2014Clicked: boolean = false;
   IsBtn2013Clicked: boolean = false;
   IsBtn2012Clicked: boolean = false;
   IsBtn2011Clicked: boolean = false;
 
-  InventoryGaugeChartDataSet = {
+  InventoryGaugeChartDataSet: any = {
     needleValue: 70,
     bottomLabel: '70',
     options: {
@@ -34,7 +34,7 @@ export class DashboardComponent implements OnInit, AfterViewInit {
     }
   };
 
-  PurchaseGaugeChartDataSet = {
+  PurchaseGaugeChartDataSet: any = {
     needleValue: 30,
     options: {
       hasNeedle: true,

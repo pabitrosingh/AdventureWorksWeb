@@ -2,9 +2,10 @@ import { Injectable } from '@angular/core';
 import { environment } from '../../environments/environment';
 import { IDepartment } from '../viewmodel/IDepartment';
 import { Observable } from 'rxjs';
-import { HttpClient } from '@angular/common/http';
+import { HttpClient, HttpParams } from '@angular/common/http';
 import { IEmployee } from '../viewmodel/IEmployee';
 import { IAssemblyLine } from '../viewmodel/IAssemblyLine';
+import { IProductDetails } from '../viewmodel/IProductDetails';
 
 
 @Injectable({
@@ -64,6 +65,19 @@ export class DBrepositoryService {
   }
 
   // *******Production Services End********//
+
+
+  // *******Sales Services Start********//
+
+  GetProductDetailsFromServer(DataToPost: object): Observable<IProductDetails[]> {
+    return this.http.get<IProductDetails[]>(
+      this.BASE_URL + `Sales/GetProductDetails`, {
+        params: new HttpParams().set('ProductDetailsFilter', JSON.stringify(DataToPost))
+      });
+  }
+
+
+  // *******Sales Services End********//
 
   // public GetDepartmentsFromServer(): Observable<IDepartment[]> {
   //   return this.http.get<IDepartment[]>(this.BASE_URL + `Department/GetDepartmentDetails`);
