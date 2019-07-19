@@ -15,23 +15,50 @@
   </div>
 </div>
 <div class="row mt-2" style="margin-left: 1px;">
-  <div *ngFor="let item of ProductDetails">
+  <div *ngFor="let item of ProductDetailsList">
     <div class="card card-hover" style="width: 18rem;margin: 2px;">
       <img src="{{BASE_URL}}Sales/GetImage/{{item.ProductID}}" class="card-img-top" alt="{{ item.ProductNumber}}">
       <div class="card-body">
         <h5 class="card-title">{{item.Name}}</h5>
         <ul class="list-group list-group-flush">
-          <li class="list-group-item">MRP:{{item.ListPrice}}</li>
-          <li class="list-group-item" *ngIf="item.Color!=null">Color:{{item.Color}}</li>
-          <li class="list-group-item" *ngIf="item.Style!=null">Style:{{item.Style}}</li>
-          <li class="list-group-item" *ngIf="item.Class!=null">Class:{{item.Class}}</li>
-          <li class="list-group-item" *ngIf="item.Weight!=null">Weight:{{item.Weight}} {{item.WeightUnitMeasureCode}}</li>
-          <li class="list-group-item" *ngIf="item.Size!=null">Size:{{item.Size}} {{item.SizeUnitMeasureCode}}</li>
+          <li class="list-group-item">{{item.ProductNumber}}</li>
+          <li class="list-group-item">MRP: {{item.ListPrice | currency:"INR"}}</li>
         </ul>
-        <p class="card-text">{{item.Description}}</p>
-        <button class="btn btn-outline-info">Add to cart</button>
+        <br />
+        <button class="btn btn-outline-info" (click)="BtnViewDetails(item.ProductID)">View Details</button>
       </div>
     </div>
   </div>
 </div>
-<br/><br/><br/><br/>
+<br /><br /><br /><br />
+<ng-template #IDProductDetailsModelRef id="IDProductDetailsModel" let-modal>
+  <div class="modal-header">
+    <h4 class="modal-title" id="modal-basic-title">{{SingleProduct.Name}}</h4>
+  </div>
+  <div class="modal-body">
+    <div class="card mb-3">
+      <div class="row no-gutters">
+        <div class="col-md-4">
+          <img src="{{BASE_URL}}Sales/GetImage/{{SingleProduct.ProductID}}" class="card-img" alt="{{SingleProduct.ProductNumber}}">
+        </div>
+        <div class="col-md-8">
+          <div class="card-body">
+            <h5 class="card-title">{{SingleProduct.ProductNumber}}</h5>
+            <ul class="list-group list-group-flush">
+              <li class="list-group-item">MRP: {{SingleProduct.ListPrice | currency:"INR"}}</li>
+              <li class="list-group-item">Category: {{SingleProduct.Category}} | Sub Category: {{SingleProduct.SubCategory}}</li>
+              <li class="list-group-item">Model: {{SingleProduct.Model}} | Product Line: {{SingleProduct.ProductLine}}</li>
+              <li class="list-group-item">Style: {{SingleProduct.Style}} | Color: {{SingleProduct.Color}} | Class: {{SingleProduct.Class}}</li>
+              <li class="list-group-item">Weight: {{SingleProduct.Weight}} {{SingleProduct.WeightUnitMeasureCode}} | Size: {{SingleProduct.Size}} {{SingleProduct.SizeUnitMeasureCode}}</li>
+              <li class="list-group-item">{{SingleProduct.Description}}</li>
+              <li class="list-group-item">Ratings:</li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="modal-footer">
+    <button type="button" class="btn btn-outline-info" (click)="modal.close();BtnAdtoCart()">Add To Cart</button>
+  </div>
+</ng-template>
