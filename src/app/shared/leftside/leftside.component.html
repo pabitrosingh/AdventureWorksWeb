@@ -116,6 +116,25 @@
             <label class="custom-control-label" for="IDRDIOBlack">Black</label>
         </div>
     </li>
+    <li class="list-group-item" *ngIf="Router.url == '/sales/product'">
+      <h6 class="dropdown-header">Category</h6>
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOBikes" name="RDIOCategory">
+        <label class="custom-control-label" for="IDRDIOBikes">Bikes</label>
+    </div>
+      <div class="custom-control custom-radio">
+          <input type="radio" class="custom-control-input" value="H" id="IDRDIOComponents" name="RDIOCategory">
+          <label class="custom-control-label" for="IDRDIOComponents">Components</label>
+      </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOAccessories" name="RDIOCategory">
+        <label class="custom-control-label" for="IDRDIOAccessories">Accessories</label>
+       </div>
+      <div class="custom-control custom-radio">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOClothing" name="RDIOCategory">
+        <label class="custom-control-label" for="IDRDIOClothing">Clothing</label>
+     </div>
+  </li>
 </ul>
 <br/>
 <br/>
