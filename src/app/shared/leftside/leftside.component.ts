@@ -11,7 +11,7 @@ import { IProductFilter } from 'src/app/viewmodel/IProductFilter';
 })
 export class LeftsideComponent implements OnInit {
 
-  public FilterData: IProductFilter = {};
+  public FilterData: { ProductLine: string ,  Style: string,  Class: string, Color: string, Category: string};
 
   constructor(public _Router: Router , private _ProductFilterService: ProductFilterService) { }
   ngOnInit() {
