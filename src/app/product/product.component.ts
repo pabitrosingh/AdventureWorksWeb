@@ -5,7 +5,7 @@ import { IProductDetails } from '../viewmodel/IProductDetails';
 import { environment } from 'src/environments/environment';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 import { ProductFilterService } from '../services/ProductFilter.service';
-import { IProductFilter } from '../viewmodel/IProductFilter';
+import { ProductFilter } from '../viewmodel/IProductFilter';
 
 @Component({
   selector: 'app-product',
@@ -26,8 +26,8 @@ export class ProductComponent implements OnInit {
     private _ProductFilterService: ProductFilterService) { }
 
   ngOnInit() {
+    this.GetProductDetails();
     this._ProductFilterService.GetFilterValue().subscribe(filterData => {
-      console.log(filterData);
         this.GetProductDetails(filterData);
     });
   }
@@ -41,18 +41,14 @@ export class ProductComponent implements OnInit {
   public BtnAdtoCart(): void {
 
   }
-
-  private GetProductDetails(filterData: IProductFilter): void {
-
-    const DataToPost = new FormData();
-    DataToPost.append('NameProductNumber', this.IDTxtSearch);
-    DataToPost.append('ProductLine', filterData.ProductLine);
-    DataToPost.append('Style', filterData.Style);
-    DataToPost.append('Class', filterData.Class);
-    DataToPost.append('Color', filterData.Color);
-    DataToPost.append('Category', filterData.Category);
-
-    this.DB.GetProductDetailsFromServer(DataToPost)
+  public BtnSearchClick(): void {
+    this.GetProductDetails();
+  }
+  private GetProductDetails(filterData?: ProductFilter): void {
+    if (this.IDTxtSearch != null) {
+      const _filterData =  new ProductFilter();
+      _filterData.NameProductNumber = this.IDTxtSearch;
+      this.DB.GetProductDetailsFromServer(_filterData)
       .subscribe(resp => {
         if (resp.length > 0) {
           this.ProductDetailsList = resp;
@@ -61,5 +57,18 @@ export class ProductComponent implements OnInit {
         error => {
           console.log(error);
         });
+    } else {
+      this.DB.GetProductDetailsFromServer(filterData)
+      .subscribe(resp => {
+        if (resp.length > 0) {
+          this.ProductDetailsList = resp;
+        }
+      },
+        error => {
+          console.log(error);
+        });
+    }
+
+
   }
 }

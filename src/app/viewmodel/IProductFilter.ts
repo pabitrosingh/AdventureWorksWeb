@@ -4,6 +4,7 @@ export interface IProductFilter {
   Class: string;
   Color: string;
   Category: string;
+  NameProductNumber: string;
 }
 
 export class ProductFilter implements IProductFilter {
@@ -11,5 +12,6 @@ export class ProductFilter implements IProductFilter {
   Class: string;
   Color: string;
   Category: string;
+  NameProductNumber: string;
 
 }

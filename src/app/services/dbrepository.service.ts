@@ -70,10 +70,16 @@ export class DBrepositoryService {
   // *******Sales Services Start********//
 
   GetProductDetailsFromServer(DataToPost: object): Observable<IProductDetails[]> {
-    return this.http.get<IProductDetails[]>(
-      this.BASE_URL + `Sales/GetProductDetails`, {
-        params: new HttpParams().set('ProductDetailsFilter', JSON.stringify(DataToPost))
-      });
+    if (DataToPost !== undefined) {
+      return this.http.get<IProductDetails[]>(
+        this.BASE_URL + `Sales/GetProductDetails`, {
+          params: new HttpParams().set('PostedData', JSON.stringify(DataToPost)),
+          headers: {'Content-Type': 'application/json'}
+        });
+    } else {
+      return this.http.get<IProductDetails[]>(this.BASE_URL + `Sales/GetProductDetails`);
+    }
+
   }
 
 
