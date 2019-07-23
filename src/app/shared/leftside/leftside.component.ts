@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router } from '@angular/router';
 import { ProductFilterService } from 'src/app/services/ProductFilter.service';
-import { IProductFilter } from 'src/app/viewmodel/IProductFilter';
+import { ProductFilter } from 'src/app/viewmodel/IProductFilter';
 
 
 @Component({
@@ -11,7 +11,7 @@ import { IProductFilter } from 'src/app/viewmodel/IProductFilter';
 })
 export class LeftsideComponent implements OnInit {
 
-  public FilterData: { ProductLine: string ,  Style: string,  Class: string, Color: string, Category: string};
+  public FilterData: ProductFilter = new ProductFilter();
 
   constructor(public _Router: Router , private _ProductFilterService: ProductFilterService) { }
   ngOnInit() {
