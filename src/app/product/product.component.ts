@@ -4,6 +4,7 @@ import { DBrepositoryService } from '../services/dbrepository.service';
 import { IProductDetails } from '../viewmodel/IProductDetails';
 import { environment } from 'src/environments/environment';
 import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
+import { ProductFilterService } from '../services/ProductFilter.service';
 
 @Component({
   selector: 'app-product',
@@ -13,15 +14,21 @@ import { NgbModal, NgbModalRef } from '@ng-bootstrap/ng-bootstrap';
 export class ProductComponent implements OnInit {
   ProductDetailsList: IProductDetails[];
   SingleProduct: IProductDetails;
-
+  currentRate: number = 4;
   BASE_URL = environment.API_ENDPOINT;
   @ViewChild('IDProductDetailsModelRef', { static: false}) ModalRef: ElementRef;
   constructor(private _Router: Router ,
               private DB: DBrepositoryService,
               private modalService: NgbModal,
-              ) { }
+              private _ProductFilterService: ProductFilterService) { }
 
   ngOnInit() {
+   this._ProductFilterService.GetFilterValue().subscribe(v => {
+      if ( v ) {
+        alert(v);
+      }
+   });
+
 
     let DataToPost  = new FormData();
     DataToPost.append('NameProductNumber', ' ');
@@ -46,8 +53,6 @@ export class ProductComponent implements OnInit {
      });
      this.modalService.open(this.ModalRef, { size: 'lg', backdrop: 'static' });
    }
-
-
    public BtnAdtoCart(): void {
 
    }

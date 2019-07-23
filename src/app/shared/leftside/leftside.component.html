@@ -32,106 +32,106 @@
             class="d-inline-block align-bottom float-left leftside-menu-img">
         <span>HR</span>
     </li>
-    <li class="list-group-item" *ngIf="Router.url == '/sales/product'">
+    <li class="list-group-item" *ngIf="_Router.url == '/sales/product'">
         <h6 class="dropdown-header">Product Line</h6>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIOMountain" name="RDIOProductLine">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIOMountain" name="RDIOProductLine" (change)="onRadioProductLineChnage('Mountain')">
             <label class="custom-control-label" for="IDRDIOMountain">Mountain</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="R" id="IDRDIORoadLine" name="RDIOProductLine">
+            <input type="radio" class="custom-control-input" value="R" id="IDRDIORoadLine" name="RDIOProductLine" (change)="onRadioProductLineChnage('RoadLines')">
             <label class="custom-control-label" for="IDRDIORoadLine">Road Lines</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="T" id="IDRDIOTouring" name="RDIOProductLine">
+            <input type="radio" class="custom-control-input" value="T" id="IDRDIOTouring" name="RDIOProductLine" (change)="onRadioProductLineChnage('Touring')">
             <label class="custom-control-label" for="IDRDIOTouring">Touring</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="S" id="IDRDIOStandard" name="RDIOProductLine">
+            <input type="radio" class="custom-control-input" value="S" id="IDRDIOStandard" name="RDIOProductLine" (change)="onRadioProductLineChnage('Standard')">
             <label class="custom-control-label" for="IDRDIOStandard">Standard</label>
         </div>
     </li>
-    <li class="list-group-item" *ngIf="Router.url == '/sales/product'">
+    <li class="list-group-item" *ngIf="_Router.url == '/sales/product'">
         <h6 class="dropdown-header">Style</h6>
         <div class="custom-control custom-radio">
-            <input type="radio" id="IDRDIOMens" value="M" name="RDIOStyle" class="custom-control-input">
+            <input type="radio" id="IDRDIOMens" value="M" name="RDIOStyle" class="custom-control-input" (change)="onRadioStyleChnage('Mens')">
             <label class="custom-control-label" for="IDRDIOMens">Mens</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" id="IDRDIOWomens" value="W" name="RDIOStyle" class="custom-control-input">
+            <input type="radio" id="IDRDIOWomens" value="W" name="RDIOStyle" class="custom-control-input" (change)="onRadioStyleChnage('Womens')">
             <label class="custom-control-label" for="IDRDIOWomens">Womens</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" id="IDRDIOUniversal" value="U" name="RDIOStyle" class="custom-control-input">
+            <input type="radio" id="IDRDIOUniversal" value="U" name="RDIOStyle" class="custom-control-input" (change)="onRadioStyleChnage('Universal')">
             <label class="custom-control-label" for="IDRDIOUniversal">Universal</label>
         </div>
     </li>
-    <li class="list-group-item" *ngIf="Router.url == '/sales/product'">
+    <li class="list-group-item" *ngIf="_Router.url == '/sales/product'">
         <h6 class="dropdown-header">Class</h6>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="H" id="IDRDIOHigh" name="RDIOClass">
+            <input type="radio" class="custom-control-input" value="H" id="IDRDIOHigh" name="RDIOClass" (change)="onRadioClassChnage('High')">
             <label class="custom-control-label" for="IDRDIOHigh">High</label>
         </div>
         <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" value="H" id="IDRDIOLow" name="RDIOClass">
+          <input type="radio" class="custom-control-input" value="H" id="IDRDIOLow" name="RDIOClass" (change)="onRadioClassChnage('Low')">
           <label class="custom-control-label" for="IDRDIOLow">Low</label>
        </div>
        <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input" value="H" id="IDRDIOMedium" name="RDIOClass">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOMedium" name="RDIOClass" (change)="onRadioClassChnage('Medium')">
         <label class="custom-control-label" for="IDRDIOMedium">Medium</label>
        </div>
     </li>
-    <li class="list-group-item" *ngIf="Router.url == '/sales/product'">
+    <li class="list-group-item" *ngIf="_Router.url == '/sales/product'">
         <h6 class="dropdown-header">Color</h6>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="H" id="IDRDIOWhite" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="H" id="IDRDIOWhite" name="RDIOColor" (change)="onRadioColorChnage('White')">
             <label class="custom-control-label" for="IDRDIOWhite">White</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="L" id="IDRDIOYellow" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="L" id="IDRDIOYellow" name="RDIOColor" (change)="onRadioColorChnage('Yellow')">
             <label class="custom-control-label" for="IDRDIOYellow">Yellow</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIOSilver" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIOSilver" name="RDIOColor" (change)="onRadioColorChnage('Silver')">
             <label class="custom-control-label" for="IDRDIOSilver">Silver</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIORed" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIORed" name="RDIOColor" (change)="onRadioColorChnage('Red')">
             <label class="custom-control-label" for="IDRDIORed">Red</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIOMulti" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIOMulti" name="RDIOColor" (change)="onRadioColorChnage('Multi')">
             <label class="custom-control-label" for="IDRDIOMulti">Multi</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIOGrey" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIOGrey" name="RDIOColor" (change)="onRadioColorChnage('Grey')">
             <label class="custom-control-label" for="IDRDIOGrey">Grey</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIOBlue" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIOBlue" name="RDIOColor" (change)="onRadioColorChnage('Blue')">
             <label class="custom-control-label" for="IDRDIOBlue">Blue</label>
         </div>
         <div class="custom-control custom-radio">
-            <input type="radio" class="custom-control-input" value="M" id="IDRDIOBlack" name="RDIOColor">
+            <input type="radio" class="custom-control-input" value="M" id="IDRDIOBlack" name="RDIOColor" (change)="onRadioColorChnage('Black')">
             <label class="custom-control-label" for="IDRDIOBlack">Black</label>
         </div>
     </li>
-    <li class="list-group-item" *ngIf="Router.url == '/sales/product'">
+    <li class="list-group-item" *ngIf="_Router.url == '/sales/product'">
       <h6 class="dropdown-header">Category</h6>
       <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input" value="H" id="IDRDIOBikes" name="RDIOCategory">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOBikes" name="RDIOCategory" (change)="onRadioCategoryChnage('Bikes')">
         <label class="custom-control-label" for="IDRDIOBikes">Bikes</label>
     </div>
       <div class="custom-control custom-radio">
-          <input type="radio" class="custom-control-input" value="H" id="IDRDIOComponents" name="RDIOCategory">
+          <input type="radio" class="custom-control-input" value="H" id="IDRDIOComponents" name="RDIOCategory" (change)="onRadioCategoryChnage('Components')">
           <label class="custom-control-label" for="IDRDIOComponents">Components</label>
       </div>
       <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input" value="H" id="IDRDIOAccessories" name="RDIOCategory">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOAccessories" name="RDIOCategory" (change)="onRadioCategoryChnage('Accessories')">
         <label class="custom-control-label" for="IDRDIOAccessories">Accessories</label>
        </div>
       <div class="custom-control custom-radio">
-        <input type="radio" class="custom-control-input" value="H" id="IDRDIOClothing" name="RDIOCategory">
+        <input type="radio" class="custom-control-input" value="H" id="IDRDIOClothing" name="RDIOCategory" (change)="onRadioCategoryChnage('Clothing')">
         <label class="custom-control-label" for="IDRDIOClothing">Clothing</label>
      </div>
   </li>
