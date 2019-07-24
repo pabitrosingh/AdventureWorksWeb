@@ -26,7 +26,6 @@ import { ProductComponent } from './product/product.component';
 import { VendorsComponent } from './vendors/vendors.component';
 import { ShippingComponent } from './shipping/shipping.component';
 import { SalesOrderComponent } from './sales-order/sales-order.component';
-import { OffersComponent } from './offers/offers.component';
 import { StoreComponent } from './store/store.component';
 import { PurchaseOrderComponent } from './purchase-order/purchase-order.component';
 import { InventoryComponent } from './inventory/inventory.component';
@@ -64,7 +63,6 @@ import { GaugeChartModule } from 'angular-gauge-chart';
     VendorsComponent,
     ShippingComponent,
     SalesOrderComponent,
-    OffersComponent,
     StoreComponent,
     PurchaseOrderComponent,
     InventoryComponent,
