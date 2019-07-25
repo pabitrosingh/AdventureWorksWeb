@@ -1,3 +1,23 @@
-<p>
-  store works!
-</p>
+<agm-map [latitude]="Centerlat" [longitude]="Centerlng" [zoom]=2 [minZoom]=2 >
+  <agm-marker [latitude]="12.9791198" [longitude]="77.5912997">
+    <agm-info-window [disableAutoPan]="true">
+      Bangalore , Inida
+    </agm-info-window>
+  </agm-marker>
+  <agm-marker [latitude]="35.689487" [longitude]="139.691711">
+    <agm-info-window [disableAutoPan]="true">
+      Tokyo , Japan
+    </agm-info-window>
+  </agm-marker>
+  <agm-marker [latitude]="40.712776" [longitude]="-74.005974">
+    <agm-info-window [disableAutoPan]="true">
+      New Your , USA
+    </agm-info-window>
+  </agm-marker>
+  <agm-marker [latitude]="-33.924870" [longitude]="18.424055">
+    <agm-info-window [disableAutoPan]="true">
+      Cape Twon, Africa
+    </agm-info-window>
+  </agm-marker>
+</agm-map>
+

@@ -37,13 +37,13 @@ import { jqxGridComponent } from 'jqwidgets-scripts/jqwidgets-ts/angular_jqxgrid
 import { MaterialModule } from './material-module/material-module.module';
 import { FullCalendarModule } from '@fullcalendar/angular';
 import { GaugeChartModule } from 'angular-gauge-chart';
-
+import { AgmCoreModule } from '@agm/core';
 
 
 @NgModule({
   declarations: [
-    jqxGridComponent,
     AppComponent,
+    jqxGridComponent,
     HeaderComponent,
     FooterComponent,
     LeftsideComponent,
@@ -80,7 +80,10 @@ import { GaugeChartModule } from 'angular-gauge-chart';
     NgbModule,
     NgxChartsModule,
     FullCalendarModule,
-    GaugeChartModule
+    GaugeChartModule,
+    AgmCoreModule.forRoot({
+      apiKey: 'AIzaSyALqrc_I-5AIRWlmU9XH_13ZsuROsaBzjo'
+    })
   ],
   providers: [DBrepositoryService],
   bootstrap: [AppComponent]
