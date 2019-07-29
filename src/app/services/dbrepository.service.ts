@@ -81,9 +81,19 @@ export class DBrepositoryService {
     }
 
   }
-
-
   // *******Sales Services End********//
+
+  // *******Purchase Services Start********//
+
+  GetShippingRateChartFromServer(): Observable<{ ShipMethodID: number, Name: string, ShipBase: number, ShipRate: number  }[]> {
+    return this.http.get<{ ShipMethodID: number, Name: string, ShipBase: number, ShipRate: number}[]>(
+      this.BASE_URL + `Purchasing/GetShippingRateChart`);
+  }
+
+
+  // *******Purchase Services End********//
+
+  // *******HR Services Start********//
 
   // public GetDepartmentsFromServer(): Observable<IDepartment[]> {
   //   return this.http.get<IDepartment[]>(this.BASE_URL + `Department/GetDepartmentDetails`);
@@ -106,4 +116,8 @@ export class DBrepositoryService {
   //   return this.http.get<{ Year: number, Quater: number, Name: string, Sales: number }[]>(
   //     this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
   // }
+
+  // *******HR Services End********//
 }
+
+
