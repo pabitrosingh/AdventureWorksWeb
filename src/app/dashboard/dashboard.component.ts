@@ -19,7 +19,8 @@ export class DashboardComponent implements OnInit, AfterViewInit {
   IsBtn2013Clicked: boolean = false;
   IsBtn2012Clicked: boolean = false;
   IsBtn2011Clicked: boolean = false;
-
+  Year: string = 'Year';
+  Sales: string = 'Sales';
   InventoryGaugeChartDataSet: any = {
     needleValue: 70,
     bottomLabel: '70',
