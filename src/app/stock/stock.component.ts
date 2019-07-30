@@ -27,7 +27,7 @@ export class StockComponent implements OnInit, AfterViewInit {
       sortdirection: 'asc',
       id: 'ProductID',
       pagesize: 5,
-      // root: 'root',
+      root: 'root',
       datafields: [
         { name: 'ProductID', type: 'int' },
         { name: 'Name', type: 'string' },

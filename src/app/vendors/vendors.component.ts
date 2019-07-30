@@ -26,7 +26,7 @@ export class VendorsComponent implements OnInit , AfterViewInit {
       sortdirection: 'asc',
       id: 'BusinessEntityID',
       pagesize: 15,
-      // root: 'root',
+      root: 'root',
       datafields: [
         { name: 'BusinessEntityID', type: 'int' },
         { name: 'VendorName', type: 'string' },
