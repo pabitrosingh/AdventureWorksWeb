@@ -6,8 +6,8 @@ import { QueryList } from '@angular/core';
 
 export const environment = {
   production: false ,
-  // API_ENDPOINT: 'http://localhost:5050/api/'
-  API_ENDPOINT: 'http://192.168.1.217/ADWorksAPI/api/'
+   API_ENDPOINT: 'http://localhost:5050/api/'
+  // API_ENDPOINT: 'http://192.168.1.217/ADWorksAPI/api/'
 };
 
 /*
