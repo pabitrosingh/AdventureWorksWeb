@@ -8,6 +8,7 @@ import { Component, OnInit } from '@angular/core';
 })
 export class HeaderComponent implements OnInit {
   public isNavCollapsed = true;
+  CartItemCount: number = 0;
   constructor() { }
   ngOnInit() {
   }

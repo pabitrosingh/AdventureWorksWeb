@@ -44,7 +44,8 @@ export class DBrepositoryService {
 
   GetAssemblyLineDataFromServer(): Observable<{
     LocationID: number, AssemblyName: string,
-    CountWorkOrder: number, RoutingSequence: number}[]> {
+    CountWorkOrder: number, RoutingSequence: number
+  }[]> {
     return this.http.get<{ LocationID: number, AssemblyName: string, CountWorkOrder: number, RoutingSequence: number }[]>(
       this.BASE_URL + `Production/GetAssemblyLineCount`);
   }
@@ -74,48 +75,48 @@ export class DBrepositoryService {
       return this.http.get<IProductDetails[]>(
         this.BASE_URL + `Sales/GetProductDetails`, {
           params: new HttpParams().set('PostedData', JSON.stringify(DataToPost)),
-          headers: {'Content-Type': 'application/json'}
+          headers: { 'Content-Type': 'application/json' }
         });
     } else {
       return this.http.get<IProductDetails[]>(this.BASE_URL + `Sales/GetProductDetails`);
     }
-
   }
+
+  public GetCurrentYearTerritorySalesReportDataFromServer(): Observable<{ Year: number, Name: string, Sales: number }[]> {
+    return this.http.get<{ Year: number, Name: string, Sales: number }[]>(
+      this.BASE_URL + `Sales/GetCurrentYearTerritorySalesReport`);
+  }
+
+  public GetQuaterlyProductSalesDataDataFromServer(): Observable<{ Year: number, Quater: number, Name: string, Sales: number }[]> {
+    return this.http.get<{ Year: number, Quater: number, Name: string, Sales: number }[]>(
+      this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
+  }
+
+
   // *******Sales Services End********//
 
   // *******Purchase Services Start********//
 
-  GetShippingRateChartFromServer(): Observable<{ ShipMethodID: number, Name: string, ShipBase: number, ShipRate: number  }[]> {
-    return this.http.get<{ ShipMethodID: number, Name: string, ShipBase: number, ShipRate: number}[]>(
+  GetShippingRateChartFromServer(): Observable<{ ShipMethodID: number, Name: string, ShipBase: number, ShipRate: number }[]> {
+    return this.http.get<{ ShipMethodID: number, Name: string, ShipBase: number, ShipRate: number }[]>(
       this.BASE_URL + `Purchasing/GetShippingRateChart`);
   }
-
 
   // *******Purchase Services End********//
 
   // *******HR Services Start********//
 
-  // public GetDepartmentsFromServer(): Observable<IDepartment[]> {
-  //   return this.http.get<IDepartment[]>(this.BASE_URL + `Department/GetDepartmentDetails`);
-  // }
-
-  // public GetDepartmentFromServer(deptid: Number): Observable<IDepartment> {
-  //   return this.http.get<IDepartment>(this.BASE_URL + `Department/GetDepartmentDetails/${deptid}`);
-  // }
-
   public GetEmployeeDetailsFromServer(empid: Number): Observable<IEmployee[]> {
-    return this.http.get<IEmployee[]>(this.BASE_URL + `Employee/GetEmployeeDetails/${empid}`);
+    return this.http.get<IEmployee[]>(this.BASE_URL + `HR/GetEmployeeDetails/${empid}`);
   }
 
-  // public GetCurrentYearTerritorySalesReportDataFromServer(): Observable<{ Year: number, Name: string, Sales: number }[]> {
-  //   return this.http.get<{ Year: number, Name: string, Sales: number }[]>(
-  //     this.BASE_URL + `Sales/GetCurrentYearTerritorySalesReport`);
-  // }
+  public GetDepartmentsFromServer(): Observable<IDepartment[]> {
+    return this.http.get<IDepartment[]>(this.BASE_URL + `HR/GetDepartmentDetails`);
+  }
 
-  // public GetQuaterlyProductSalesDataDataFromServer(): Observable<{ Year: number, Quater: number, Name: string, Sales: number }[]> {
-  //   return this.http.get<{ Year: number, Quater: number, Name: string, Sales: number }[]>(
-  //     this.BASE_URL + `Sales/GetCurrentYearQuaterlyProductSalesReport`);
-  // }
+  public GetDepartmentFromServer(deptid: Number): Observable<IDepartment> {
+    return this.http.get<IDepartment>(this.BASE_URL + `HR/GetDepartmentDetails/${deptid}`);
+  }
 
   // *******HR Services End********//
 }
