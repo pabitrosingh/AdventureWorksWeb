@@ -24,11 +24,11 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 ## Getting Started
 
 To run the app you mast have the bellow set up
-*SQL Server 2014 with Adventure Works Database
-*Angular CLI
-*Node JS
-*[Dotnet Core](https://dotnet.microsoft.com/download)
-*AdventureWorksAPI Web API Project
+* SQL Server 2014 with Adventure Works Database
+* Angular CLI
+* Node JS
+* [Dotnet Core](https://dotnet.microsoft.com/download)
+* AdventureWorksAPI Web API Project
 
 `````` cli
 Run `dotnet run` for a dotnet core Web API dev server. Navigate to `http://localhost:5050/`. 
