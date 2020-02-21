@@ -15,7 +15,7 @@ This project was generated with [Angular CLI](https://github.com/angular/angular
 * [FullCalender](https://fullcalendar.io/) 
 * [Icons](https://useiconic.com/open/)
 * [jQWidgets](https://www.jqwidgets.com/angular/)
-* [jQWidgets](https://www.jqwidgets.com/angular/)
+
 
 * [DataTables](https://datatables.net/)
 * [Adventure Works Databse Structure](http://elsasoft.com/samples/sqlserver_adventureworks/SqlServer.SPRING.KATMAI.AdventureWorks/default.htm)
