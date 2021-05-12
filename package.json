@@ -32,7 +32,7 @@
     "@types/chart.js": "^2.7.56",
     "angular-gauge-chart": "^0.6.0",
     "bootstrap": "^4.3.1",
-    "chart.js": "^2.8.0",
+    "chart.js": "^2.9.4",
     "core-js": "^3.1.4",
     "hammerjs": "^2.0.8",
     "jqwidgets-scripts": "^8.1.2",
